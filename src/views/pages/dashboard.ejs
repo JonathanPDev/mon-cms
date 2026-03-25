@@ -1,0 +1,129 @@
+<div class="card dashboard-topbar">
+    <h2>Mon tableau de bord</h2>
+
+    <div class="top-action">
+        <div class="search">
+            <input type="search" name="" id="" placeholder="Rechercher un projet, une page, un widget...">
+            <i data-lucide="search" class="icon-search"></i>
+        </div>
+
+        <button type="button" class="cardProject create" id="openModal">+ Nouveau projet</button>
+        <i data-lucide="settings" class="icon-topaction icon-setting"></i>
+        <i data-lucide="contrast" class="icon-topaction icon-theme" title="Changer le thème"></i>
+
+    </div>
+
+</div>
+<div class="hero">
+    <section class="card mesProjet">
+
+        <div class="setting-bar">
+            <i data-lucide="trash-2" class="setting-icon"></i>
+            <i data-lucide="expand" class="setting-icon"></i>
+            <i data-lucide="plus" class="setting-icon"></i>
+        </div>
+        <div class="header-projet">
+            <h3>Projet recent</h3>
+        </div>
+
+        <div class="project-grid">
+            <% if (projects && projects.length> 0) { %>
+                <% projects.forEach(project=> { %>
+                    <article class="project-card">
+                        <div class="project-card__top">
+                            <div>
+                                <p class="project-card__eyebrow">Projet</p>
+                                <h4 class="project-card__title">
+                                    <%= project.name %>
+                                </h4>
+                            </div>
+
+                            <span class="badge badge-status badge-status-<%= project.status %>">
+                                <%= project.status %>
+                            </span>
+                        </div>
+
+                        <div class="project-card__meta">
+                            <span class="badge badge-soft">
+                                <%= project.typeSite || "portfolio" %>
+                            </span>
+                            <span class="badge badge-soft">6 pages</span>
+                            <span class="badge badge-soft">Privé</span>
+                        </div>
+
+                        <div class="project-card__infos">
+                            <div class="info-row">
+                                <span>Dernière modification</span>
+                                <strong>
+                                    <%= new Date(project.updatedAt).toLocaleDateString("fr-FR") %>
+                                </strong>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Progression</span>
+                                <strong>100%</strong>
+                            </div>
+
+                            <div class="progress-line">
+                                <span style="width: 100%;"></span>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Domaine</span>
+                                <strong>monsite.demo</strong>
+                            </div>
+                        </div>
+
+                        <div class="project-card__bottom">
+                            <a href="/editor/<%= project._id %>" class="project-card__btn">
+                                Ouvrir le projet
+                            </a>
+                        </div>
+                    </article>
+                    <% }) %>
+                        <% } else { %>
+                            <p>Aucun projet pour le moment.</p>
+                            <% } %>
+        </div>
+    </section>
+    <div class="side-stack">
+        <section class="card action-rapide">
+            <div class="setting-bar">
+                <i data-lucide="trash-2" class="setting-icon"></i>
+                <i data-lucide="expand" class="setting-icon"></i>
+                <i data-lucide="plus" class="setting-icon"></i>
+            </div>
+            <h3>Actions rapide</h3>
+            <div class="quick-list">
+                <div class="quick-action">
+                    <i data-lucide="plus" class="quick-icon"></i>
+                    <strong>Créer un projet</strong>
+                </div>
+                <div class="quick-action">
+                    <i data-lucide="pencil" class="quick-icon"></i>
+                    <strong>Edité un projet</strong>
+                </div>
+                <div class="quick-action">
+                    <i data-lucide="chart-spline" class="quick-icon"></i>
+                    <strong>Statistique</strong>
+                </div>
+                <div class="quick-action">
+                    <i data-lucide="headset" class="quick-icon"></i>
+                    <strong>Besoin d'aide ?</strong>
+                </div>
+            </div>
+        </section>
+        <section class="card recent-activities">
+            <div class="setting-bar">
+                <i data-lucide="trash-2" class="setting-icon"></i>
+                <i data-lucide="expand" class="setting-icon"></i>
+                <i data-lucide="plus" class="setting-icon"></i>
+            </div>
+            <h3>Activités recentes</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo accusamus similique, autem quaerat ipsa
+            perferendis rem magni, quibusdam non vel nesciunt, delectus pariatur maiores aspernatur eos sequi ab aut
+            libero!
+        </section>
+    </div>
+
+</div>

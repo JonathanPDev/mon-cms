@@ -1,0 +1,24 @@
+.auth-page {
+  max-width: 500px;
+}
+
+.auth-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.auth-form input,
+.auth-form button {
+  padding: 12px 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+}
+
+.auth-form button {
+  cursor: pointer;
+}
+
+.form-error {
+  color: #c62828;
+}

@@ -1,0 +1,14 @@
+<section class="container page-section auth-page">
+  <h1>Inscription</h1>
+
+  <% if (error) { %>
+    <p class="form-error"><%= error %></p>
+  <% } %>
+
+  <form action="/register" method="POST" class="auth-form">
+    <input type="text" name="name" placeholder="Nom" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Mot de passe" required>
+    <button type="submit">S'inscrire</button>
+  </form>
+</section>

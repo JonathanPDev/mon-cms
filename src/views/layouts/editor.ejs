@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || "Éditeur" %></title>
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/editor.css">
+</head>
+<body>
+  <main class="editor-layout">
+    <aside class="editor-aside">
+      <div class="editor-aside-header">
+        <h2>Éditeur</h2>
+      </div>
+
+      <div class="editor-aside-body">
+        <section class="aside-block">
+          <h3>Structure</h3>
+          <p>Liste des sections</p>
+        </section>
+
+        <section class="aside-block">
+          <h3>Style</h3>
+          <p>Couleurs, tailles, alignement...</p>
+        </section>
+
+        <section class="aside-block">
+          <h3>Contenu</h3>
+          <p>Texte, image, liens...</p>
+        </section>
+      </div>
+    </aside>
+
+    <section class="editor-workspace">
+      <div class="editor-topbar">
+        <div class="editor-topbar-left">
+          <a href="/dashboard">Retour</a>
+        </div>
+
+        <div class="editor-topbar-center">
+          <strong><%= currentUser?.name || "Utilisateur" %></strong>
+        </div>
+
+        <div class="editor-topbar-right">
+          <button type="button">Aperçu</button>
+          <button type="button">Sauvegarder</button>
+        </div>
+      </div>
+
+      <div class="editor-canvas-wrapper">
+        <%- body %>
+      </div>
+    </section>
+
+    <!-- <div class="floating-panels">
+      <div class="floating-panel">
+        Panel rapide
+      </div>
+    </div> -->
+  </main>
+
+  <script src="/js/editor.js"></script>
+</body>
+</html>

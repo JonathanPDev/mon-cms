@@ -1,0 +1,89 @@
+.editor-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 100vh;
+  position: relative;
+}
+
+.editor-aside {
+  background: #1f1f1f;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.editor-aside-header {
+  margin-bottom: 24px;
+}
+
+.editor-aside-body {
+  display: grid;
+  gap: 18px;
+}
+
+.aside-block {
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.editor-workspace {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #ececec;
+}
+
+.editor-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.editor-topbar-left,
+.editor-topbar-center,
+.editor-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.editor-canvas-wrapper {
+  padding: 24px;
+}
+
+.editor-page {
+  display: grid;
+  gap: 20px;
+}
+
+.page-preview {
+  width: 100%;
+  min-height: 600px;
+  /* padding: 24px; */
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  /* border-radius: 16px; */
+}
+
+.fake-site-section {
+  padding: 40px;
+  border: 1px dashed #bbbbbb;
+  /* border-radius: 12px; */
+}
+
+.floating-panels {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.floating-panel {
+  padding: 14px 18px;
+  background: #222222;
+  color: #ffffff;
+  border-radius: 12px;
+}

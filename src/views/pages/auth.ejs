@@ -1,0 +1,32 @@
+<section class="container page-section auth-page">
+  <h1>Connexion / Inscription</h1>
+
+  <% if (loginError) { %>
+    <p class="form-error"><%= loginError %></p>
+  <% } %>
+
+  <% if (registerError) { %>
+    <p class="form-error"><%= registerError %></p>
+  <% } %>
+
+  <div class="auth-boxes">
+    <div class="auth-block">
+      <h2>Connexion</h2>
+      <form action="/login" method="POST" class="auth-form">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit">Se connecter</button>
+      </form>
+    </div>
+
+    <div class="auth-block">
+      <h2>Inscription</h2>
+      <form action="/register" method="POST" class="auth-form">
+        <input type="text" name="name" placeholder="Nom" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit">S'inscrire</button>
+      </form>
+    </div>
+  </div>
+</section>

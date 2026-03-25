@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= title || "Mon CMS" %>
+  </title>
+
+  <link rel="stylesheet" href="/css/global.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <% if (pageCss) { %>
+    <link rel="stylesheet" href="/css/<%= pageCss %>">
+    <% } %>
+</head>
+
+<body>
+  <header class="site-header">
+    <i data-lucide="text-align-justify"></i>
+    <a href="/" class="logo">Mon CMS</a>
+
+    <nav class="site-nav">
+      <% if (currentUser) { %>
+        <a href="/dashboard">
+          <%= currentUser?.name || "Utilisateur" %>
+        </a>
+
+        <form action="/logout" method="POST">
+          <button type="submit">Déconnexion</button>
+        </form>
+        <% } else { %>
+          <a href="/auth">
+            <i data-lucide="user"></i>
+          </a>
+          <% } %>
+    </nav>
+  </header>
+  <% if (showDashboardLayout) { %>
+    <main class="dashboard-main">
+      <aside class="aside-dashboard">
+        <nav class="navbar-dashboard">
+          <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/projects">Mes projets</a></li>
+            <li><a href="#">Collaborateurs</a></li>
+            <li><a href="#">Templates</a></li>
+            <li><a href="#">Facturation</a></li>
+            <li><a href="#">Paramètres</a></li>
+            <li><a href="#">Besoin d'aide ?</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <section class="dashboard-content">
+        <%- body %>
+      </section>
+    </main>
+    <div class="container-modal" id="modalCreateProject">
+      <div class="fond-opaque"></div>
+
+      <div class="modal">
+        <button class="close-modal">✕</button>
+
+        <h3>Nouveau projet</h3>
+
+        <form action="/projects" method="POST" class="create-project-form">
+          <input type="text" name="name" placeholder="Nom du projet" required />
+          <button type="submit">Créer</button>
+        </form>
+      </div>
+    </div>
+    <% } else { %>
+      <main class="site-main">
+        <%- body %>
+      </main>
+      <% } %>
+
+        <footer class="site-footer">
+          <div class="container">
+            <p>© Mon CMS</p>
+          </div>
+        </footer>
+
+        <% if (pageJs) { %>
+          <script src="/js/<%= pageJs %>"></script>
+          <% } %>
+            <script>
+              lucide.createIcons();
+            </script>
+</body>
+
+</html>
