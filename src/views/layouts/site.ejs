@@ -17,29 +17,17 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <i data-lucide="text-align-justify"></i>
-    <a href="/" class="logo">Mon CMS</a>
 
-    <nav class="site-nav">
-      <% if (currentUser) { %>
-        <a href="/dashboard">
-          <%= currentUser?.name || "Utilisateur" %>
-        </a>
-
-        <form action="/logout" method="POST">
-          <button type="submit">Déconnexion</button>
-        </form>
-        <% } else { %>
-          <a href="/auth">
-            <i data-lucide="user"></i>
-          </a>
-          <% } %>
-    </nav>
-  </header>
   <% if (showDashboardLayout) { %>
     <main class="dashboard-main">
       <aside class="aside-dashboard">
+        <div class="aside-top-dashboard">
+          <span class="letterUser">
+            J
+          </span>
+          <i data-lucide="circle-arrow-left" class="closed-aside-dashboard"></i>
+          
+        </div>
         <nav class="navbar-dashboard">
           <ul>
             <li><a href="/dashboard">Dashboard</a></li>
@@ -49,6 +37,15 @@
             <li><a href="#">Facturation</a></li>
             <li><a href="#">Paramètres</a></li>
             <li><a href="#">Besoin d'aide ?</a></li>
+            
+            <hr>
+            
+            <li>
+              <a href="/">
+                <i data-lucide="arrow-left" class="iconSmall"></i>
+                Revenir au site
+              </a>
+            </li>
           </ul>
         </nav>
       </aside>
@@ -72,16 +69,37 @@
       </div>
     </div>
     <% } else { %>
+      <header class="site-header">
+        <i data-lucide="text-align-justify"></i>
+        <a href="/" class="logo">Mon CMS</a>
+
+        <nav class="site-nav">
+          <% if (currentUser) { %>
+            <a href="/dashboard">
+              <%= currentUser?.name || "Utilisateur" %>
+            </a>
+
+            <form action="/logout" method="POST">
+              <button type="submit">Déconnexion</button>
+            </form>
+            <% } else { %>
+              <a href="/auth">
+                <i data-lucide="user"></i>
+              </a>
+              <% } %>
+        </nav>
+      </header>
       <main class="site-main">
         <%- body %>
       </main>
+      <footer class="site-footer">
+        <div class="container">
+          <p>© Mon CMS</p>
+        </div>
+      </footer>
       <% } %>
 
-        <footer class="site-footer">
-          <div class="container">
-            <p>© Mon CMS</p>
-          </div>
-        </footer>
+
 
         <% if (pageJs) { %>
           <script src="/js/<%= pageJs %>"></script>

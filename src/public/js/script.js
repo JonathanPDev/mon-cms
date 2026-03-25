@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Variables setting
     const settingsBtn = document.querySelector(".icon-setting");
     const settingBars = document.querySelectorAll(".setting-bar");
+    const cards = document.querySelectorAll(".card");
 
     // Variables thème
     const themeBtn = document.querySelector(".icon-theme");
@@ -37,14 +38,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Setting dashboard
     if (settingsBtn) {
         settingsBtn.addEventListener("click", () => {
-            isActive = !isActive;
+    isActive = !isActive;
 
-            settingBars.forEach(bar => {
-                bar.classList.toggle("active", isActive);
-            });
+    settingBars.forEach(bar => {
+        bar.classList.toggle("active", isActive);
+    });
 
-            settingsBtn.classList.toggle("active", isActive);
-        });
+    cards.forEach(card => {
+        card.classList.toggle("is-setting", isActive);
+    });
+
+    settingsBtn.classList.toggle("active", isActive);
+});
     }
 
     // Appliquer le thème sauvegardé

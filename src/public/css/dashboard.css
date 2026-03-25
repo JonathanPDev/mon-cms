@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 :root {
     --bg-main: #f5f7fb;
     --bg-card: #ffffff;
@@ -159,6 +160,33 @@ body.dark-mode {
     background: var(--aside-bg);
     color: var(--aside-text);
 }
+.aside-top-dashboard {
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.aside-top-dashboard .letterUser {
+    display: inline-block;
+    font-size: 24px;
+    font-family: "Archivo Black", sans-serif;
+    width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 255, 0.636);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-dashboard a {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.navbar-dashboard a .iconSmall{
+    height: 18px;
+}
 
 .navbar-dashboard ul li {
     padding: 10px;
@@ -301,6 +329,26 @@ body.dark-mode {
     opacity: 0;
     pointer-events: none;
     transition: 0.2s;
+}
+.card.is-setting {
+    transform-origin: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card.is-setting:hover {
+    transform: rotate(-0.6deg) scale(1.01);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+.card.is-setting:hover {
+    transform: scale(1.02);
+
+    animation: hoverWiggle 0.25s ease;
+}
+
+@keyframes hoverWiggle {
+    0%   { transform: rotate(0deg); }
+    30%  { transform: rotate(-1deg); }
+    60%  { transform: rotate(1deg); }
+    100% { transform: rotate(0deg); }
 }
 
 .setting-bar.active {
