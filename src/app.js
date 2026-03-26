@@ -9,6 +9,7 @@ const authRoutes = require("./routes/auth.routes");
 const editorRoutes = require("./routes/editor.routes");
 const dashboardRoutes = require("./routes/dashboard.routes");
 const projectRoutes = require("./routes/project.routes");
+const userInfoRoutes = require("./routes/userInfo.routes");
 
 const app = express();
 
@@ -48,9 +49,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", webRoutes);
 app.use("/", authRoutes);
-// app.use("/", editorRoutes);
 app.use("/", dashboardRoutes);
 app.use("/", projectRoutes);
 app.use(editorRoutes);
+app.use("/", userInfoRoutes);
 
 module.exports = app;
