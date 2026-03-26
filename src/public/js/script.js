@@ -16,6 +16,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let isActive = false;
 
+    // Aside dashboard
+    const dashboardMain = document.querySelector(".dashboard-main");
+    const aside = document.querySelector(".aside-dashboard");
+    const toggleAsideBtn = document.querySelector(".toggle-aside");
+
+    const savedAsideState = localStorage.getItem("dashboard-aside-collapsed");
+
+    if (savedAsideState === "true" && dashboardMain) {
+        dashboardMain.classList.add("aside-collapsed");
+    }
+
+    if (toggleAsideBtn && dashboardMain) {
+        toggleAsideBtn.addEventListener("click", () => {
+            dashboardMain.classList.toggle("aside-collapsed");
+
+            const isCollapsed = dashboardMain.classList.contains("aside-collapsed");
+            localStorage.setItem("dashboard-aside-collapsed", isCollapsed);
+
+            toggleAsideBtn.setAttribute(
+                "aria-label",
+                isCollapsed ? "Ouvrir l'aside" : "Fermer l'aside"
+            );
+        });
+    }
+
     // Modal
     if (openBtn && modal) {
         openBtn.addEventListener("click", () => {
@@ -38,18 +63,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Setting dashboard
     if (settingsBtn) {
         settingsBtn.addEventListener("click", () => {
-    isActive = !isActive;
+            isActive = !isActive;
 
-    settingBars.forEach(bar => {
-        bar.classList.toggle("active", isActive);
-    });
+            settingBars.forEach(bar => {
+                bar.classList.toggle("active", isActive);
+            });
 
-    cards.forEach(card => {
-        card.classList.toggle("is-setting", isActive);
-    });
+            cards.forEach(card => {
+                card.classList.toggle("is-setting", isActive);
+            });
 
-    settingsBtn.classList.toggle("active", isActive);
-});
+            settingsBtn.classList.toggle("active", isActive);
+        });
     }
 
     // Appliquer le thème sauvegardé

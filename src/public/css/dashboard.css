@@ -10,7 +10,7 @@
     --hover-bg: #f1f5f9;
     --accent: #111827;
 
-    --aside-bg: #111827;
+    --aside-bg: #f5f7fb;
     --aside-text: #ffffff;
 
     --project-soft-bg: #e5e9ff;
@@ -46,7 +46,6 @@ body.dark-mode {
     --hover-bg: #1e293b;
     --accent: #ffffff;
 
-    --aside-bg: #0b1220;
     --aside-text: #f3f4f6;
 
     --project-soft-bg: #1e293b;
@@ -76,6 +75,7 @@ body.dark-mode {
     grid-template-columns: 280px minmax(0, 1fr);
     gap: 26px;
     min-height: 100vh;
+    transition: grid-template-columns 0.25s ease, gap 0.25s ease;
 }
 
 .dashboard {
@@ -156,9 +156,16 @@ body.dark-mode {
 
 .aside-dashboard {
     min-width: 250px;
+    width: 100%;
+    overflow: hidden;
     border-right: 1px solid var(--border-color);
-    background: var(--aside-bg);
-    color: var(--aside-text);
+    background: var(--bg-main);
+    color: var(--text-main);
+    transition: min-width 0.25s ease, width 0.25s ease, padding 0.25s ease;
+}
+.aside-dashboard h3 {
+    color: var(--eyebrow-color);
+    font-weight: 100;
 }
 .aside-top-dashboard {
     border-bottom: 1px solid var(--border-color);
@@ -166,19 +173,65 @@ body.dark-mode {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
-.aside-top-dashboard .letterUser {
+.letterUser {
     display: inline-block;
     font-size: 24px;
     font-family: "Archivo Black", sans-serif;
     width: 40px;
     min-height: 40px;
     border-radius: 50%;
-    background: rgba(0, 0, 255, 0.636);
+    background: rgb(0, 0, 255);
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.toggle-aside {
+    border: none;
+    background: var(--bg-card);
+    color: var(--text-main);
+    border-radius: 10px;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Contenu à masquer quand aside fermé */
+.aside-dashboard .navbar-dashboard,
+.aside-dashboard h3 {
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* Etat fermé */
+.dashboard-main.aside-collapsed {
+    grid-template-columns: 74px minmax(0, 1fr);
+}
+
+.dashboard-main.aside-collapsed .aside-dashboard {
+    min-width: 74px;
+}
+
+.dashboard-main.aside-collapsed .aside-dashboard .navbar-dashboard,
+.dashboard-main.aside-collapsed .aside-dashboard h3 {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.dashboard-main.aside-collapsed .aside-top-dashboard {
+    justify-content: center;
+    flex-direction: column;
+}
+
+.dashboard-main.aside-collapsed .toggle-aside i {
+    transform: rotate(180deg);
+}
+
 .navbar-dashboard a {
     font-size: 14px;
     display: flex;
@@ -194,6 +247,7 @@ body.dark-mode {
 
 .navbar-dashboard ul li a {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
 }
 
 .dashboard-content {
@@ -220,6 +274,7 @@ body.dark-mode {
     border-radius: 10px;
     padding: 20px;
 }
+
 .dashboard-topbar,
 .project-item,
 .quick-action,

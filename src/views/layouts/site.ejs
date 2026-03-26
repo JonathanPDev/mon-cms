@@ -23,23 +23,46 @@
       <aside class="aside-dashboard">
         <div class="aside-top-dashboard">
           <span class="letterUser">
-            J
+            <%= (currentUser?.name?.trim()?.charAt(0) || "U" ).toUpperCase() %>
           </span>
-          <i data-lucide="circle-arrow-left" class="closed-aside-dashboard"></i>
           
+          <!-- ***************** A faire ********* -->
+          <div class="search">
+            <input type="search" name="" id="" placeholder="Recherches...">
+            <i data-lucide="search" class="icon-search"></i>
+          </div>
+          <!-- *********************************** -->
+
+          <button type="button" class="toggle-aside" aria-label="Fermer l'aside">
+            <i data-lucide="panel-left-close"></i>
+          </button>
         </div>
         <nav class="navbar-dashboard">
           <ul>
-            <li><a href="/dashboard">Dashboard</a></li>
+            <div class="compteLink">
+              <h3>Mon compte</h3>
+              <li><a href="#">Mes infos</a></li>
+              <li><a href="">Sécurité du compte</a></li>
+              <li><a href="#">Facturation</a></li>
+
+              <form action="/logout" method="POST">
+                <button type="submit">Déconnexion</button>
+              </form>
+              <hr>
+            </div>
+            <div class="navigationLink">
+              <h3>Navigation</h3>
+              <li><a href="/dashboard">Dashboard</a></li>
+            </div>
+
             <li><a href="/projects">Mes projets</a></li>
             <li><a href="#">Collaborateurs</a></li>
             <li><a href="#">Templates</a></li>
-            <li><a href="#">Facturation</a></li>
             <li><a href="#">Paramètres</a></li>
             <li><a href="#">Besoin d'aide ?</a></li>
-            
+
             <hr>
-            
+
             <li>
               <a href="/">
                 <i data-lucide="arrow-left" class="iconSmall"></i>
