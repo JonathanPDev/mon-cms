@@ -14,6 +14,8 @@ async function dashboard(req, res) {
       pageCss: "dashboard.css",
       pageJs: "script.js",
       showDashboardLayout: true,
+      topbarTitle: "Dashboard",
+      topbarActions: ["new-project", "filter", "sort"],
       projects
     });
   } catch (error) {

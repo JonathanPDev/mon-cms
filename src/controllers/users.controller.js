@@ -9,6 +9,8 @@ async function renderUserInfos(req, res) {
       pageCss: "dashboard.css",
       pageJs: "global.js",
       showDashboardLayout: true,
+      topbarTitle: "Mes infos",
+      topbarActions: [],
       currentUser
     });
   } catch (error) {

@@ -11,7 +11,11 @@ const dashboardRoutes = require("./routes/dashboard.routes");
 const projectRoutes = require("./routes/project.routes");
 const userInfoRoutes = require("./routes/userInfo.routes");
 
+const topbarMiddleware = require("./middlewares/topbar.middleware");
+
 const app = express();
+
+app.use(topbarMiddleware);
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));

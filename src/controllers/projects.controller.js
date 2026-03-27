@@ -23,6 +23,8 @@ async function getUserProjects(req, res) {
       layout: "layouts/site",
       pageCss: "dashboard.css",
       showDashboardLayout: true,
+      topbarTitle: "Mes projets",
+      topbarActions: [],
       projects
     });
   } catch (error) {

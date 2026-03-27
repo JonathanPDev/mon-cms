@@ -19,120 +19,121 @@
 <body>
 
   <% if (showDashboardLayout) { %>
-    <main class="dashboard-main">
-      <aside class="aside-dashboard">
-        <div class="aside-top-dashboard">
-          <span class="letterUser">
-            <%= (currentUser?.name?.trim()?.charAt(0) || "U" ).toUpperCase() %>
-          </span>
-          
-          <!-- ***************** A faire ********* -->
-          <div class="search">
-            <input type="search" name="" id="" placeholder="Recherches...">
-            <i data-lucide="search" class="icon-search"></i>
+      <main class="dashboard-main">
+        <aside class="aside-dashboard">
+          <div class="aside-top-dashboard">
+            <span class="letterUser">
+              <%= (currentUser?.name?.trim()?.charAt(0) || "U" ).toUpperCase() %>
+            </span>
+
+            <!-- ***************** A faire ********* -->
+            <div class="search">
+              <input type="search" name="" id="" placeholder="Recherches...">
+              <i data-lucide="search" class="icon-search"></i>
+            </div>
+            <!-- *********************************** -->
+
+            <button type="button" class="toggle-aside" aria-label="Fermer l'aside">
+              <i data-lucide="panel-left-close"></i>
+            </button>
           </div>
-          <!-- *********************************** -->
+          <nav class="navbar-dashboard">
+            <ul>
+              <div class="compteLink">
+                <h3>Mon compte</h3>
 
-          <button type="button" class="toggle-aside" aria-label="Fermer l'aside">
-            <i data-lucide="panel-left-close"></i>
-          </button>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/info">Mes infos</a></li>
+                <li><a href="">Messages</a></li>
+                <li><a href="">Sécurité du compte</a></li>
+                <li><a href="#">Facturation</a></li>
+
+                <form action="/logout" method="POST">
+                  <button type="submit" class="btn-style-1">Déconnexion</button>
+                </form>
+                <hr>
+              </div>
+              <div class="navigationLink">
+                <h3>Navigation</h3>
+                <ul>
+                  <li><a href="/projects">Mes projets</a></li>
+                  <li><a href="#">Collaborateurs</a></li>
+                  <li><a href="#">Templates</a></li>
+                  <li><a href="#">Paramètres</a></li>
+                  <li><a href="#">Besoin d'aide ?</a></li>
+                </ul>
+              </div>
+
+              <hr>
+
+              <li>
+                <a href="/">
+                  <i data-lucide="arrow-left" class="iconSmall"></i>
+                  Revenir au site
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+        <section class="dashboard-content">
+          <%- include("../partials/account-topbar") %>
+          <%- body %>
+        </section>
+      </main>
+      <div class="container-modal" id="modalCreateProject">
+        <div class="fond-opaque"></div>
+
+        <div class="modal">
+          <button class="close-modal">✕</button>
+
+          <h3>Nouveau projet</h3>
+
+          <form action="/projects" method="POST" class="create-project-form">
+            <input type="text" name="name" placeholder="Nom du projet" required />
+            <button type="submit">Créer</button>
+          </form>
         </div>
-        <nav class="navbar-dashboard">
-          <ul>
-            <div class="compteLink">
-              <h3>Mon compte</h3>
+      </div>
+      <% } else { %>
+        <header class="site-header">
+          <i data-lucide="text-align-justify"></i>
+          <a href="/" class="logo">Mon CMS</a>
 
-              <li><a href="/dashboard">Dashboard</a></li>
-              <li><a href="/info">Mes infos</a></li>
-              <li><a href="">Messages</a></li>
-              <li><a href="">Sécurité du compte</a></li>
-              <li><a href="#">Facturation</a></li>
+          <nav class="site-nav">
+            <% if (currentUser) { %>
+              <a href="/dashboard">
+                <%= currentUser?.name || "Utilisateur" %>
+              </a>
 
               <form action="/logout" method="POST">
-                <button type="submit" class="btn-style-1">Déconnexion</button>
+                <button type="submit">Déconnexion</button>
               </form>
-              <hr>
-            </div>
-            <div class="navigationLink">
-              <h3>Navigation</h3>
-              
-            </div>
-
-            <li><a href="/projects">Mes projets</a></li>
-            <li><a href="#">Collaborateurs</a></li>
-            <li><a href="#">Templates</a></li>
-            <li><a href="#">Paramètres</a></li>
-            <li><a href="#">Besoin d'aide ?</a></li>
-
-            <hr>
-
-            <li>
-              <a href="/">
-                <i data-lucide="arrow-left" class="iconSmall"></i>
-                Revenir au site
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
-      <section class="dashboard-content">
-        <%- body %>
-      </section>
-    </main>
-    <div class="container-modal" id="modalCreateProject">
-      <div class="fond-opaque"></div>
-
-      <div class="modal">
-        <button class="close-modal">✕</button>
-
-        <h3>Nouveau projet</h3>
-
-        <form action="/projects" method="POST" class="create-project-form">
-          <input type="text" name="name" placeholder="Nom du projet" required />
-          <button type="submit">Créer</button>
-        </form>
-      </div>
-    </div>
-    <% } else { %>
-      <header class="site-header">
-        <i data-lucide="text-align-justify"></i>
-        <a href="/" class="logo">Mon CMS</a>
-
-        <nav class="site-nav">
-          <% if (currentUser) { %>
-            <a href="/dashboard">
-              <%= currentUser?.name || "Utilisateur" %>
-            </a>
-
-            <form action="/logout" method="POST">
-              <button type="submit">Déconnexion</button>
-            </form>
-            <% } else { %>
-              <a href="/auth">
-                <i data-lucide="user"></i>
-              </a>
-              <% } %>
-        </nav>
-      </header>
-      <main class="site-main">
-        <%- body %>
-      </main>
-      <footer class="site-footer">
-        <div class="container">
-          <p>© Mon CMS</p>
-        </div>
-      </footer>
-      <% } %>
+              <% } else { %>
+                <a href="/auth">
+                  <i data-lucide="user"></i>
+                </a>
+                <% } %>
+          </nav>
+        </header>
+        <main class="site-main">
+          <%- body %>
+        </main>
+        <footer class="site-footer">
+          <div class="container">
+            <p>© Mon CMS</p>
+          </div>
+        </footer>
+        <% } %>
 
 
 
-        <% if (pageJs) { %>
-          <script src="/js/<%= pageJs %>"></script>
-          <% } %>
-            <script>
-              lucide.createIcons();
-            </script>
+          <% if (pageJs) { %>
+            <script src="/js/<%= pageJs %>"></script>
+            <% } %>
+              <script>
+                lucide.createIcons();
+              </script>
 </body>
 
 </html>
