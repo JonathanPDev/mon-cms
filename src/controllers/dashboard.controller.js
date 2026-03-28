@@ -6,7 +6,7 @@ async function dashboard(req, res) {
 
     const projects = await Project.find({ userId })
       .sort({ updatedAt: -1 })
-      .limit(3);
+      .limit(5);
 
     res.render("pages/dashboard", {
       layout: "layouts/site",
@@ -15,7 +15,7 @@ async function dashboard(req, res) {
       pageJs: "script.js",
       showDashboardLayout: true,
       topbarTitle: "Dashboard",
-      topbarActions: ["new-project", "filter", "sort"],
+      topbarActions: ["new-project"],
       projects
     });
   } catch (error) {

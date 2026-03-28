@@ -100,4 +100,54 @@ document.addEventListener("DOMContentLoaded", () => {
             themeBtn.classList.add("active");
         }
     }
+    const mesProjet = document.querySelector(".mesProjet");
+const mesProjetHandleY = document.querySelector(".mesProjet-resize-handle-y");
+
+if (mesProjet && mesProjetHandleY) {
+    const STORAGE_KEY = "mesProjetHeight";
+    const MIN_HEIGHT = 300;
+    const MAX_HEIGHT = 500;
+
+    const savedHeight = localStorage.getItem(STORAGE_KEY);
+    if (savedHeight) {
+        mesProjet.style.setProperty("--mesprojet-height", savedHeight);
+    }
+
+    let isResizing = false;
+    let startY = 0;
+    let startHeight = 0;
+
+    mesProjetHandleY.addEventListener("pointerdown", (e) => {
+        isResizing = true;
+        startY = e.clientY;
+        startHeight = mesProjet.getBoundingClientRect().height;
+
+        mesProjet.classList.add("is-resizing");
+        mesProjetHandleY.setPointerCapture(e.pointerId);
+    });
+
+    mesProjetHandleY.addEventListener("pointermove", (e) => {
+        if (!isResizing) return;
+
+        const deltaY = e.clientY - startY;
+        const nextHeight = Math.max(MIN_HEIGHT, Math.min(startHeight + deltaY, MAX_HEIGHT));
+
+        mesProjet.style.setProperty("--mesprojet-height", `${nextHeight}px`);
+    });
+
+    const stopResize = () => {
+        if (!isResizing) return;
+
+        isResizing = false;
+        mesProjet.classList.remove("is-resizing");
+
+        const finalHeight = getComputedStyle(mesProjet).getPropertyValue("--mesprojet-height").trim();
+        if (finalHeight) {
+            localStorage.setItem(STORAGE_KEY, finalHeight);
+        }
+    };
+
+    mesProjetHandleY.addEventListener("pointerup", stopResize);
+    mesProjetHandleY.addEventListener("pointercancel", stopResize);
+}
 });

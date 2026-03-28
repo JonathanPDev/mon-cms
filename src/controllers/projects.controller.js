@@ -24,7 +24,7 @@ async function getUserProjects(req, res) {
       pageCss: "dashboard.css",
       showDashboardLayout: true,
       topbarTitle: "Mes projets",
-      topbarActions: [],
+      topbarActions: ["new-project"],
       projects
     });
   } catch (error) {
