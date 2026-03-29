@@ -7,7 +7,7 @@ async function renderUserInfos(req, res) {
     return res.render("pages/infosUser", {
       title: "Mes infos",
       pageCss: "dashboard.css",
-      pageJs: "global.js",
+      pageJs: "script.js",
       showDashboardLayout: true,
       topbarTitle: "Mes infos",
       topbarActions: [],

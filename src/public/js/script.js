@@ -150,4 +150,37 @@ if (mesProjet && mesProjetHandleY) {
     mesProjetHandleY.addEventListener("pointerup", stopResize);
     mesProjetHandleY.addEventListener("pointercancel", stopResize);
 }
+const grid = document.querySelector(".project-grid");
+const btnGrid = document.querySelector(".btn-view-grid");
+const btnList = document.querySelector(".btn-view-list");
+
+const STORAGE_KEY_VIEW = "projectView";
+
+// charger préférence
+const savedView = localStorage.getItem(STORAGE_KEY_VIEW);
+if (savedView === "list") {
+    grid.classList.add("view-list");
+    btnList?.classList.add("active");
+    btnGrid?.classList.remove("active");
+}
+
+// click GRID
+btnGrid?.addEventListener("click", () => {
+    grid.classList.remove("view-list");
+
+    btnGrid.classList.add("active");
+    btnList.classList.remove("active");
+
+    localStorage.setItem(STORAGE_KEY_VIEW, "grid");
+});
+
+// click LIST
+btnList?.addEventListener("click", () => {
+    grid.classList.add("view-list");
+
+    btnList.classList.add("active");
+    btnGrid.classList.remove("active");
+
+    localStorage.setItem(STORAGE_KEY_VIEW, "list");
+});
 });

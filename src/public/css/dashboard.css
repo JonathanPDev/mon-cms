@@ -797,10 +797,11 @@ p,
 }
 
 .info-box {
-    border: 1px solid #e5e7eb;
     border-radius: 16px;
     padding: 18px;
-    background: #f8fafc;
+    background: var(--bg-card-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
 }
 
 .label {
@@ -881,4 +882,37 @@ p,
     .project-card {
         width: 100%;
     }
+}
+/* Mode LIST */
+.project-grid.view-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Card en mode liste */
+.project-grid.view-list .project-card {
+    height: auto;
+    min-height: 80px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Ajustement contenu */
+.project-grid.view-list .project-card__top {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.project-grid.view-list .project-card__title {
+    font-size: 1rem;
+}
+
+/* Badge à droite */
+.project-grid.view-list .badge {
+    margin-left: auto;
 }

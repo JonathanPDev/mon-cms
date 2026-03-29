@@ -22,6 +22,7 @@ async function getUserProjects(req, res) {
       title: "Dashboard",
       layout: "layouts/site",
       pageCss: "dashboard.css",
+      pageJs: "script.js",
       showDashboardLayout: true,
       topbarTitle: "Mes projets",
       topbarActions: ["new-project"],
