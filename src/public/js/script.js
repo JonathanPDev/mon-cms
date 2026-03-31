@@ -105,7 +105,7 @@ const mesProjetHandleY = document.querySelector(".mesProjet-resize-handle-y");
 
 if (mesProjet && mesProjetHandleY) {
     const STORAGE_KEY = "mesProjetHeight";
-    const MIN_HEIGHT = 300;
+    const MIN_HEIGHT = 310;
     const MAX_HEIGHT = 500;
 
     const savedHeight = localStorage.getItem(STORAGE_KEY);

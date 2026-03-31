@@ -1,3 +1,274 @@
-<div class="info-box">
-    section
+<div class="info-box-grid">
+    <div class="col-1">
+        <div class="top-section">
+            <h3>Infos personelles</h3>
+            <i data-lucide="chevron-down"></i>
+        </div>
+
+
+        <form action="" method="post">
+            <div class="form-group">
+                <input type="text" name="firstName" id="" placeholder="Votre nom">
+                <input type="text" name="lastName" id="" placeholder="Votre prénom">
+            </div>
+            <div class="form-group">
+                <input type="date" name="birthday" id="">
+            </div>
+            <div class="form-group-adress">
+                <input type="text" name="adress" id="" placeholder="Adresse">
+                <input type="text" name="postalCode" id="" placeholder="Code postal">
+                <input type="text" name="city" id="" placeholder="Ville">
+                <input type="text" name="country" id="" placeholder="Pays">
+            </div>
+            <div class="form-group form-group-adress-plus">
+                <div class="top-section-form">
+                    <h4>Adresse de facturation</h4>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="content-adress-plus ">
+                    <input type="text" name="adressPlus" id="" placeholder="Adresse de facturation">
+
+                    <div class="form-group">
+                        <input type="text" name="postalCodePlus" id="" placeholder="Code postal">
+                        <input type="text" name="cityPlus" id="" placeholder="Ville">
+                    </div>
+                </div>
+
+            </div>
+            <input type="submit" value="Enregistrer">
+
+        </form>
+
+        <div class="top-section">
+            <h3>Entreprise</h3>
+            <i data-lucide="chevron-down"></i>
+        </div>
+        <form action="" method="post">
+            <div class="form-group">
+                <input type="text" name="companyName" id="" placeholder="Nom de l'entreprise">
+                <input type="text" name="siret" id="" placeholder="SIRET">
+            </div>
+            <div class="form-group">
+                <input type="text" name="vatNumber" id="" placeholder="Numéro de TVA">
+                <input type="text" name="companyAdress" id="" placeholder="Adresse de l'entreprise">
+            </div>
+            <input type="submit" value="Enregistrer">
+        </form>
+
+        <div class="top-section">
+            <h3>Modifier le mot de passe</h3>
+            <i data-lucide="chevron-down"></i>
+        </div>
+        <form action="" method="post">
+            <div class="form-group">
+                <input type="password" name="currentPassword" id="" placeholder="Mot de passe actuel">
+            </div>
+            <div class="form-group">
+                <input type="password" name="newPassword" id="" placeholder="Nouveau mot de passe">
+                <input type="password" name="confirmNewPassword" id="" placeholder="Confirmer le nouveau mot de passe">
+            </div>
+            <input type="submit" value="Enregistrer">
+        </form>
+    </div>
+    <div class="col-2">
+        <div class="top-section">
+            <h3>Moyens de paiement</h3>
+            <i data-lucide="chevron-down"></i>
+        </div>
+
+        <ul class="onglet-paiement">
+            <li class="btn-onglet-paiement active" data-payment-tab="cbCard">Cartes bancaires</li>
+            <li class="btn-onglet-paiement" data-payment-tab="autreMoyen">Prélèvement & autres</li>
+        </ul>
+
+        <div class="payment-method-container">
+            <section class="payment-method-panel cbCard active">
+                <div class="container-cbCard">
+                    <button class="cb-nav cb-nav-prev" type="button" aria-label="Carte précédente">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+
+                    <div class="cb-slider">
+                        <div class="cb-track">
+                            <article class="cb-card is-active">
+                                <div class="cb-card-top">
+                                    <div class="cb-card-chip"></div>
+
+                                    <div class="setting-card">
+                                        <i data-lucide="trash-2" class="cbCard-icon"></i>
+                                        <i data-lucide="pencil" class="cbCard-icon"></i>
+                                    </div>
+                                </div>
+
+                                <div class="logoCard">Mastercard</div>
+
+                                <div class="cardNumber">
+                                    <span>****</span>
+                                    <span>****</span>
+                                    <span>****</span>
+                                    <span>1234</span>
+                                    <i data-lucide="eye" class="iconEye"></i>
+                                </div>
+
+                                <div class="cb-card-bottom">
+                                    <div class="nameCard">
+                                        <small>Titulaire</small>
+                                        <span>John Doe</span>
+                                    </div>
+
+                                    <div class="expiredCard">
+                                        <small>Expire le</small>
+                                        <span>12/25</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="cb-card cb-card-secondary">
+                                <div class="cb-card-top">
+                                    <div class="cb-card-chip"></div>
+
+                                    <div class="setting-card">
+                                        <i data-lucide="trash-2" class="cbCard-icon"></i>
+                                        <i data-lucide="pencil" class="cbCard-icon"></i>
+                                    </div>
+                                </div>
+
+                                <div class="logoCard">Visa</div>
+
+                                <div class="cardNumber">
+                                    <span>****</span>
+                                    <span>****</span>
+                                    <span>****</span>
+                                    <span>5678</span>
+                                    <i data-lucide="eye" class="iconEye"></i>
+                                </div>
+
+                                <div class="cb-card-bottom">
+                                    <div class="nameCard">
+                                        <small>Titulaire</small>
+                                        <span>John Doe</span>
+                                    </div>
+
+                                    <div class="expiredCard">
+                                        <small>Expire le</small>
+                                        <span>08/27</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="cb-card cb-card-dark">
+                                <div class="cb-card-top">
+                                    <div class="cb-card-chip"></div>
+
+                                    <div class="setting-card">
+                                        <i data-lucide="trash-2" class="cbCard-icon"></i>
+                                        <i data-lucide="pencil" class="cbCard-icon"></i>
+                                    </div>
+                                </div>
+
+                                <div class="logoCard">Business</div>
+
+                                <div class="cardNumber">
+                                    <span>****</span>
+                                    <span>****</span>
+                                    <span>****</span>
+                                    <span>9012</span>
+                                    <i data-lucide="eye" class="iconEye"></i>
+                                </div>
+
+                                <div class="cb-card-bottom">
+                                    <div class="nameCard">
+                                        <small>Titulaire</small>
+                                        <span>John Doe</span>
+                                    </div>
+
+                                    <div class="expiredCard">
+                                        <small>Expire le</small>
+                                        <span>03/29</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="cb-card add-card">
+                                <p>+ Ajouter une carte</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <button class="cb-nav cb-nav-next" type="button" aria-label="Carte suivante">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="cb-slider-dots">
+                    <button class="dot active" type="button" aria-label="Voir la carte 1"></button>
+                    <button class="dot" type="button" aria-label="Voir la carte 2"></button>
+                    <button class="dot" type="button" aria-label="Voir la carte 3"></button>
+                    <button class="dot" type="button" aria-label="Voir la carte 4"></button>
+                </div>
+            </section>
+
+            <section class="payment-method-panel autreMoyen">
+                <div class="other-payment-box">
+                    <div class="other-payment-item">
+                        <div>
+                            <strong>Prélèvement SEPA</strong>
+                            <p>Compte bancaire principal utilisé pour les paiements récurrents.</p>
+                        </div>
+                        <span class="badge-soft payment-badge">Actif</span>
+                    </div>
+
+                    <div class="other-payment-item">
+                        <div>
+                            <small>IBAN</small>
+                            <strong>FR76 **** **** **** 1234</strong>
+                        </div>
+                        <button type="button" class="btn-secondary">Modifier</button>
+                    </div>
+
+                    <div class="other-payment-item">
+                        <div>
+                            <strong>PayPal</strong>
+                            <p>Aucun compte connecté pour le moment.</p>
+                        </div>
+                        <button type="button" class="btn-secondary">Ajouter</button>
+                    </div>
+
+                    <div class="other-payment-item">
+                        <div>
+                            <strong>Compte secondaire</strong>
+                            <p>Ajouter un autre moyen de paiement de secours.</p>
+                        </div>
+                        <button type="button" class="btn-secondary">Configurer</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="container-param-paiement">
+            <div class="param-header">
+                <div>
+                    <h3>Abonnement & services</h3>
+                    <p>Gérez votre formule, vos options, vos factures et vos préférences de paiement.</p>
+                </div>
+            </div>
+
+            <div class="content">
+                <ul class="onglet">
+                    <li class="active" data-tab="section-1">Abonnement</li>
+                    <li data-tab="section-2">Services</li>
+                    <li data-tab="section-3">Factures</li>
+                    <li data-tab="section-4">Paramètres</li>
+                </ul>
+
+                <div class="info-container">
+                    <section class="payment-panel section-1 active">1</section>
+                    <section class="payment-panel section-2">..2.</section>
+                    <section class="payment-panel section-3">..3.</section>
+                    <section class="payment-panel section-4">.4..</section>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
