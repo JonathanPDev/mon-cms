@@ -131,6 +131,10 @@ body.dark-mode {
     gap: 16px;
 }
 
+.dashboard-topbar .mobile-open-aside .icon-menu-mobil {
+    display: none;
+}
+
 .dashboard-topbar h2 {
     font-size: 26px;
     font-weight: 600;
@@ -205,6 +209,42 @@ body.dark-mode {
 .search:hover {
     background: var(--hover-bg);
 }
+.search-icon{
+    display: none;
+}
+.icon-ellipsis,
+.mobile-more-menu {
+    display: none;
+}
+
+.mobile-more {
+    position: relative;
+    display: none;
+}
+
+.mobile-more-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 44px;
+    height: 50px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--bg-card);
+    box-shadow: var(--shadow-color);
+    flex-direction: column;
+    gap: 10px;
+    z-index: 50;
+}
+
+.mobile-more.is-open .mobile-more-menu {
+    display: flex;
+}
+
+.desktop-only {
+    display: inline-flex;
+}
 
 /* =======================
    ASIDE
@@ -225,6 +265,14 @@ body.dark-mode {
 
 .dashboard-main.aside-collapsed .aside-dashboard {
     min-width: 74px;
+    overflow: hidden;
+}
+
+.title-aside {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 .aside-dashboard h3 {
@@ -351,15 +399,6 @@ body.dark-mode {
 /* =======================
    SETTINGS MODE
 ======================= */
-
-.setting-bar {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.2s;
-}
 
 .setting-bar.active {
     opacity: 1;
@@ -863,13 +902,11 @@ p,
 
 @media (max-width: 700px) {
     .dashboard-topbar {
-        flex-direction: column;
+        /* flex-direction: column; */
         align-items: stretch;
     }
 
-    .top-action {
-        flex-wrap: wrap;
-    }
+
 
     .quick-list,
     .user-info-grid {
@@ -934,4 +971,115 @@ p,
 .setting-icon.active {
     color: #6c7cff;
     transform: scale(1.1);
+}
+.card-menu {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 20;
+}
+
+.card-menu-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card-menu-trigger:hover {
+    background: var(--hover-bg);
+    border-color: #6c7cff;
+}
+
+.card-menu-trigger.active {
+    border-color: #6c7cff;
+    background: var(--hover-bg);
+}
+
+.setting-bar {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 8px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--bg-card);
+    box-shadow: var(--shadow-color);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    white-space: nowrap;
+}
+
+.setting-bar.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.setting-icon {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.setting-icon:hover {
+    transform: scale(1.08);
+    color: #6c7cff;
+}
+
+.card-menu-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.setting-bar {
+    position: absolute;
+    top: 0;
+    right: calc(100% + 8px);
+    left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--bg-card);
+    box-shadow: var(--shadow-color);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    white-space: nowrap;
+    z-index: 30;
+}
+
+.setting-bar.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
 }

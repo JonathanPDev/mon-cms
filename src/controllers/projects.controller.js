@@ -21,7 +21,7 @@ async function getUserProjects(req, res) {
     res.render("pages/projects", {
       title: "Dashboard",
       layout: "layouts/site",
-      pageCss: "dashboard.css",
+      pageCss: ["dashboard.css", "mediaquery.css"],
       pageJs: "script.js",
       showDashboardLayout: true,
       topbarTitle: "Mes projets",

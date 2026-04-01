@@ -1,11 +1,12 @@
 <div class="dashboard-topbar">
-    <h2>
-        <%= topbarTitle %>
-    </h2>
+    <div class="mobile-open-aside">
+        <i data-lucide="menu" class="icon-menu-mobil"></i>
+        <h2><%= topbarTitle %></h2>
+    </div>
 
     <div class="top-action">
         <div class="search">
-            <input type="search" name="" id="" placeholder="Rechercher un projet, une page, un widget...">
+            <input type="search" placeholder="Rechercher un projet, une page, un widget...">
             <i data-lucide="search" class="icon-search"></i>
         </div>
 
@@ -13,11 +14,19 @@
             <button class="cardProject create" id="openModal">
                 + Nouveau projet
             </button>
-            <% } %>
-            <i data-lucide="bell"></i>
-                <i data-lucide="settings" class="icon-topaction icon-setting"></i>
+        <% } %>
+
+        <i data-lucide="search" class="icon-topaction search-icon"></i>
+        <i data-lucide="bell" class="icon-topaction bell-icon"></i>
+
+        <i data-lucide="contrast" class="icon-topaction icon-theme desktop-only" title="Changer le thème"></i>
+    
+        <div class="mobile-more">
+            <i data-lucide="ellipsis-vertical" class="icon-topaction icon-ellipsis"></i>
+
+            <div class="mobile-more-menu">
                 <i data-lucide="contrast" class="icon-topaction icon-theme" title="Changer le thème"></i>
-
+            </div>
+        </div>
     </div>
-
 </div>
