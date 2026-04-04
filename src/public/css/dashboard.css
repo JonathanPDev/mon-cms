@@ -417,11 +417,10 @@ body.dark-mode {
 
 .card.is-setting:hover {
     transform: scale(1.02);
-    animation: hoverWiggle 0.25s ease;
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
 }
 
-@keyframes hoverWiggle {
+/* @keyframes hoverWiggle {
     0% {
         transform: rotate(0deg);
     }
@@ -437,7 +436,7 @@ body.dark-mode {
     100% {
         transform: rotate(0deg);
     }
-}
+} */
 
 /* =======================
    MES PROJETS
@@ -653,12 +652,6 @@ body.dark-mode {
     font-size: 12px;
     font-weight: 700;
     line-height: 1;
-}
-
-.badge-soft {
-    background: #eef2ff;
-    color: #42506b;
-    border: 1px solid #dbe3ff;
 }
 
 .badge-status {

@@ -1,13 +1,27 @@
 li {
     list-style: none;
 }
+.iban {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+/* Boutons */
+.btn-secondary-info {
+    border: none;
+    background: transparent;
+    color: gray;
+}
+.btn-secondary-info:hover {
+    color: var(--text-main);
+}
 .info-box-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     align-items: start;
 
-    padding: 18px;
     color: var(--text-main);
 }
 .col-1 {
@@ -17,8 +31,9 @@ li {
     align-items: center;
 }
 .col-1 form{
+    width: 500px;
     max-width: 500px;
-    padding-top: 20px;
+    padding-top: 10px;
 
 }
 .col-2{
@@ -26,9 +41,32 @@ li {
     flex-direction: column;
     gap: 20px;
 }
-.form-group {
+.col-1 form input[type="submit"] {
+    float: right;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #5b6cff, #7886ff);
+    color: white;
+}
+/* Alertes formulaire */
+.alertes {
+    display: none;
+    margin-top: 25px;
+    color: red;
+}
+.form-row {
+    background: red;
+    /* max-width: 50px; */
     display: flex;
-    gap: 16px;
+    gap: 10px;
+}
+.form-group {
+    flex: 1;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
 }
 .form-group-adress {
     display: flex;
@@ -43,10 +81,8 @@ input[type="date"] {
     flex-direction: column;
     gap: 16px;
 }
-.content-adress-plus.active {
-    display: flex;
-}
-.form-group-adress input, .form-group input {
+
+.form-group input {
     flex: 1;
     background: var(--bg-card);
     border: none;
@@ -63,9 +99,10 @@ input[type="date"] {
 .onglet-paiement {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
     padding: 0;
-    margin: 0;
+    margin: 20px ;
 }
 .btn-onglet-paiement {
     border: 1px solid var(--border-color);
@@ -101,7 +138,7 @@ input[type="date"] {
     justify-content: center;
     min-width: 0;
     overflow: hidden;
-    /* padding-left: 25px; */
+    padding-left: 0;
 }
 .top-section {
     display: flex;
@@ -110,6 +147,7 @@ input[type="date"] {
     width: 100%;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
+    padding-top: 18px;
 }
 .cb-track {
     display: flex;
@@ -117,7 +155,7 @@ input[type="date"] {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding: 6px 2px 4px;
-    margin-left: 25px;
+    margin-left: 0;
 }
 
 .cb-track::-webkit-scrollbar {
@@ -354,15 +392,6 @@ input[type="date"] {
 /* =========================
    ABONNEMENT / PAIEMENT
 ========================= */
-
-.container-param-paiement {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 18px;
-    padding: 20px;
-    box-shadow: var(--shadow-color);
-}
-
 .param-header {
     display: flex;
     align-items: flex-start;
@@ -389,8 +418,9 @@ input[type="date"] {
 .onglet {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
-    padding: 0;
+    padding-top: 20px;
     margin: 0;
 }
 
@@ -433,33 +463,31 @@ input[type="date"] {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 18px;
-    padding: 18px;
-    box-shadow: var(--shadow-color);
 }
 
 .other-payment-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex: 1;
     gap: 16px;
     padding: 16px;
     border: 1px solid var(--border-color);
     border-radius: 14px;
     background: var(--bg-card-secondary);
 }
-
+.autreMoyen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .other-payment-item p {
     margin-top: 4px;
     color: var(--text-soft);
 }
 
 .other-payment-item small {
-    display: block;
-    margin-bottom: 6px;
     color: var(--text-soft);
+}
+.other-payment-item a {
+    margin-top: 50px;
 }
 @media (max-width: 700px) {
     .other-payment-item {
@@ -496,7 +524,10 @@ input[type="date"] {
     background: var(--bg-card-secondary);
 }
 
-.panel-title-row {
+other-payment-more a{
+    border: none;
+
+}.panel-title-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -665,5 +696,98 @@ input[type="date"] {
 }
 
 .payment-panel.active {
-    display: block;
+    display: flex;
+    justify-content: center;
+}
+.form-group label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-soft);
+  margin-bottom: 6px;
+}
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-main);
+}
+
+.form-group input:focus {
+  border-color: #6c7cff;
+  box-shadow: 0 0 0 2px rgba(108,124,255,0.15);
+}
+.form-group.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-group.two-cols > div {
+  display: flex;
+  flex-direction: column;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text-main);
+  box-sizing: border-box;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.row-info {
+    display: inline-block;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-info {
+    display: flex;
+    align-items: center;
+}
+.row-info .icon-infoPage {
+    width: 16px;
+    height: 16px;
+    
+}
+.badge-soft {
+    color: green;
+    border: none;
+}
+.row-info-payement {
+    display: flex;
+    gap: 10px;
+}
+.form-groupe-pref .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
