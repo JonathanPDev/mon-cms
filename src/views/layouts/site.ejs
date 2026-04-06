@@ -30,10 +30,6 @@
           <span class="letterUser">
             <%= (currentUser?.name?.trim()?.charAt(0) || "U" ).toUpperCase() %>
           </span>
-
-          <button type="button" class="toggle-aside" aria-label="Fermer l'aside">
-            <i data-lucide="panel-left-close"></i>
-          </button>
         </div>
         <nav class="navbar-dashboard">
           <ul>
@@ -45,7 +41,7 @@
 
               <li><a href="/dashboard">Dashboard</a></li>
               <li><a href="/info">Mes infos</a></li>
-              <li><a href="">Messages</a></li>
+              <li><a href="/message">Messages</a></li>
               <li><a href="">Sécurité du compte</a></li>
               <li><a href="#">Facturation</a></li>
 

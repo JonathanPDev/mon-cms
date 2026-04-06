@@ -10,6 +10,7 @@ const editorRoutes = require("./routes/editor.routes");
 const dashboardRoutes = require("./routes/dashboard.routes");
 const projectRoutes = require("./routes/project.routes");
 const userInfoRoutes = require("./routes/userInfo.routes");
+const messageRoutes = require("./routes/message.routes")
 
 const topbarMiddleware = require("./middlewares/topbar.middleware");
 
@@ -57,5 +58,6 @@ app.use("/", dashboardRoutes);
 app.use("/", projectRoutes);
 app.use(editorRoutes);
 app.use("/", userInfoRoutes);
+app.use("/", messageRoutes);
 
 module.exports = app;

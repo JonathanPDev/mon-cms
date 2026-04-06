@@ -2,7 +2,7 @@
 
 :root {
     --bg-main: #eef2f7;
-    --bg-card: #ffffff;
+    --bg-card: #f5f7fb;
     --bg-card-secondary: #f8fafc;
     --text-main: #0f172a;
     --text-soft: #475569;
@@ -81,10 +81,6 @@ body.dark-mode {
     gap: 26px;
     min-height: 100vh;
     transition: grid-template-columns 0.25s ease, gap 0.25s ease;
-}
-
-.dashboard-main.aside-collapsed {
-    grid-template-columns: 74px minmax(0, 1fr);
 }
 
 .dashboard {
@@ -265,11 +261,6 @@ body.dark-mode {
     transition: min-width 0.25s ease, width 0.25s ease, padding 0.25s ease;
 }
 
-.dashboard-main.aside-collapsed .aside-dashboard {
-    min-width: 74px;
-    overflow: hidden;
-}
-
 .title-aside {
     display: none;
     align-items: center;
@@ -320,22 +311,6 @@ body.dark-mode {
 .aside-dashboard .navbar-dashboard,
 .aside-dashboard h3 {
     transition: opacity 0.2s ease, visibility 0.2s ease;
-}
-
-.dashboard-main.aside-collapsed .aside-dashboard .navbar-dashboard,
-.dashboard-main.aside-collapsed .aside-dashboard h3 {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.dashboard-main.aside-collapsed .aside-top-dashboard {
-    justify-content: center;
-    flex-direction: column;
-}
-
-.dashboard-main.aside-collapsed .toggle-aside i {
-    transform: rotate(180deg);
 }
 
 .navbar-dashboard a {

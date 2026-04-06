@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
        ONGLETS ABONNEMENT
     ========================= */
     const tabs = Array.from(document.querySelectorAll(".onglet li"));
-    const panels = Array.from(document.querySelectorAll(".payment-panel"));
+    const panels = Array.from(document.querySelectorAll(".section-info-user"));
 
     tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+    // ------------------------------------------------------------
     const paymentTabs = Array.from(document.querySelectorAll(".btn-onglet-paiement"));
     const paymentPanels = Array.from(document.querySelectorAll(".payment-method-panel"));
 

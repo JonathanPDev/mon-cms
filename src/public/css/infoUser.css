@@ -22,35 +22,39 @@ li {
 
 .info-box-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1.6fr) 540px;
     gap: 20px;
     align-items: start;
 
     color: var(--text-main);
 }
+.col-1, .col-2 {
+    min-width: 0;
+}
 
 .col-1 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: stretch;
 }
 
 .col-1 form {
-    width: 500px;
-    max-width: 500px;
+    width: 100%;
+    max-width: none;
     padding-top: 10px;
 
 }
-.col-1 .info-section {
-    width: 100%;
-    max-width: 500px;
-    min-width: 0;
-}
+
 .col-2 {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 540px;
+    max-width: 100%;
+}
+.col-1 .info-section,
+.col-2 .info-section {
+    width: 100%;
 }
 
 .col-1 form input[type="submit"] {
@@ -567,7 +571,11 @@ input[type="date"] {
     flex-direction: column;
     width: 100%;
 }
-
+.col-1 .payment-panel form,
+.col-1 .payment-panel .formBloc {
+    width: 100%;
+    max-width: 660px;
+}
 .panel-block {
     display: flex;
     flex-direction: column;
@@ -747,11 +755,11 @@ other-payment-more a {
     }
 }
 
-.payment-panel {
+.section-info-user {
     display: none;
 }
 
-.payment-panel.active {
+.section-info-user.active {
     display: flex;
     justify-content: center;
 }

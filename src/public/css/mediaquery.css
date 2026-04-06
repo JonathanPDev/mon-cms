@@ -97,29 +97,51 @@
 
     /* Page info */
     .info-box-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
         padding: 0;
     }
-
     .col-1 form {
-        width: 100%;
+        max-width: 100%;
         padding: 10px;
     }
-
     form .form-group {
         flex-direction: column;
     }
 
     /* Carte bancaire */
     .cb-track {
-        margin-left: 20px;
+        margin: 0  20px;
     }
 
     /* Prélèvements & autres */
     .other-payment-box {
         padding: 10px;
     }
-
-    .col-1 .info-section {
-        max-width: 400px;
+    .iban-item div {
+        display: flex;
+        flex-direction: column;
     }
+    .iban-item div .iban-badge {
+        display: inline-block;
+    }
+    .iban-item > div:first-child {
+    display: inline-flex;
+    align-items: start;
+    
+    flex-wrap: wrap;
+    width: auto;
+  }
+  .container-cbCard {
+    grid-template-columns: 1fr;
+  }
+
+  .cb-nav {
+    display: none;
+  }
+  .paypal-item .row-info {
+    flex-direction: column;
+    align-items: start;
+    margin-top: 0;
+  }
 }

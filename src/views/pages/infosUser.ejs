@@ -5,69 +5,22 @@
     <section class="info-section">
       <div class="top-section">
         <h3>Infos personnelles</h3>
-        <i data-lucide="chevron-down"></i>
-      </div>
-
-      <div class="onglet-scroll">
-        <ul class="onglet">
-          <li class="active" data-tab="section-profile">Profil</li>
-          <li data-tab="section-address">Adresse</li>
-          <li data-tab="section-company">Entreprise</li>
-          <li data-tab="section-security">Sécurité</li>
-          <li data-tab="section-security">Sécurité</li>
-
-        </ul>
       </div>
 
 
+      <ul class="onglet">
+        <li class="active" data-tab="section-profile">Profil</li>
+        <li data-tab="section-address">Adresse</li>
+        <li data-tab="section-company">Entreprise</li>
+        <li data-tab="section-security">Sécurité</li>
+      </ul>
       <!-- PROFIL -->
-      <section class="payment-panel section-profile active">
+      <section class="section-info-user section-profile active">
         <div class="alertes">
           Votre email est invalide
         </div>
 
-        <form action="" method="post">
-          <div class="form-group two-cols">
-            <div class="field">
-              <label for="firstName">Nom</label>
-              <input type="text" name="firstName" id="firstName" placeholder="Perrot">
-            </div>
-
-            <div class="field">
-              <label for="lastName">Prénom</label>
-              <input type="text" name="lastName" id="lastName" placeholder="Jonathan">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email" placeholder="contact@email.com">
-            </div>
-          </div>
-
-          <div class="form-group two-cols">
-            <div class="field">
-              <label for="phone">Téléphone fixe</label>
-              <input type="tel" name="phone" id="phone" placeholder="03 xx xx xx xx">
-            </div>
-
-            <div class="field">
-              <label for="mobilePhone">Téléphone mobile</label>
-              <input type="tel" name="mobilePhone" id="mobilePhone" placeholder="06 xx xx xx xx">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="field">
-              <label for="birthday">Date de naissance</label>
-              <input type="date" name="birthday" id="birthday">
-            </div>
-          </div>
-
-          <input type="submit" value="Enregistrer">
-        </form>
-        <!-- <form action="" method="post" class="formBloc">
+        <form action="" method="post" class="formBloc">
           <div class="formgroupeRow">
             <div class="formGroupe">
               <label for="">Votre nom</label>
@@ -84,11 +37,11 @@
           </div>
           <div class="formGroupeRow">
             <div class="formGroupe">
-              <label for="telportable">Numéro de telephone portable</label>
+              <label for="telportable">Téléphone portable</label>
               <input type="text" name="telportable" id="telportable">
             </div>
             <div class="formGroupe">
-              <label for="telfix">Numéro de téléphone fixe</label>
+              <label for="telfix">Téléphone fixe</label>
               <input type="text" name="telfix" id="telfix">
             </div>
           </div>
@@ -97,12 +50,12 @@
             <input type="text" name="birstday" id="birstday">
           </div>
 
-          <input type="submit" value="Enregistré">
-        </form> -->
+          <input type="submit" value="Enregistré" class="btn-form">
+        </form>
       </section>
 
       <!-- ADRESSE -->
-      <section class="payment-panel section-address">
+      <section class="section-info-user section-address">
         <div class="alertes">
           Votre Adresse est invalide
         </div>
@@ -161,63 +114,15 @@
               <input type="text" name="commune" id="commune">
             </div>
           </div>
-          <input type="submit" value="Enregistré" class="buttonSub">
+          <input type="submit" value="Enregistré" class="btn-form">
         </form>
       </section>
 
       <!-- ENTREPRISE -->
-      <section class="payment-panel section-company">
+      <section class="section-info-user section-company">
         <div class="alertes">
           Votre SIRET est invalide
         </div>
-        <!-- <form action="" method="post">
-          <div class="form-group">
-            <div class="field">
-              <label for="companyName">Nom de l’entreprise</label>
-              <input type="text" name="companyName" id="companyName" placeholder="Nom de l’entreprise">
-            </div>
-          </div>
-
-          <div class="form-group two-cols">
-            <div class="field">
-              <label for="siret">SIRET</label>
-              <input type="text" name="siret" id="siret" placeholder="123 456 789 00000">
-            </div>
-
-            <div class="field">
-              <label for="vatNumber">Numéro de TVA</label>
-              <input type="text" name="vatNumber" id="vatNumber" placeholder="FR12345678900">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="field">
-              <label for="companyAddress">Adresse de l’entreprise</label>
-              <input type="text" name="companyAddress" id="companyAddress" placeholder="Adresse de l’entreprise">
-            </div>
-          </div>
-
-          <div class="form-group two-cols">
-            <div class="field">
-              <label for="companyPostalCode">Code postal</label>
-              <input type="text" name="companyPostalCode" id="companyPostalCode" placeholder="54000">
-            </div>
-
-            <div class="field">
-              <label for="companyCity">Ville</label>
-              <input type="text" name="companyCity" id="companyCity" placeholder="Nancy">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="field">
-              <label for="companyCountry">Pays</label>
-              <input type="text" name="companyCountry" id="companyCountry" placeholder="France">
-            </div>
-          </div>
-
-          <input type="submit" value="Enregistrer">
-        </form> -->
 
         <form action="" method="post" class="formBloc">
           <div class="formGroupe">
@@ -249,42 +154,16 @@
             </div>
           </div>
 
-          <input type="submit" value="Enregistré" class="buttonSub">
+          <input type="submit" value="Enregistré" class="btn-form">
 
         </form>
       </section>
 
       <!-- SÉCURITÉ -->
-      <section class="payment-panel section-security">
+      <section class="section-info-user section-security">
         <div class="alertes">
           Votre mot de passe actuel est invalide
         </div>
-        <!-- <form action="" method="post">
-          <div class="form-group">
-            <div class="field">
-              <label for="currentPassword">Mot de passe actuel</label>
-              <input type="password" name="currentPassword" id="currentPassword" placeholder="Mot de passe actuel">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="field">
-              <label for="newPassword">Nouveau mot de passe</label>
-              <input type="password" name="newPassword" id="newPassword" placeholder="Nouveau mot de passe">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="field">
-              <label for="confirmNewPassword">Confirmer le nouveau mot de passe</label>
-              <input type="password" name="confirmNewPassword" id="confirmNewPassword"
-                placeholder="Confirmer le nouveau mot de passe">
-            </div>
-          </div>
-
-          <input type="submit" value="Enregistrer">
-        </form> -->
-
         <!-- Test formulaire Youtube -->
         <form action="" method="post" class="formBloc">
           <!-- <h3>Modifier le mot de passe</h3> -->
@@ -300,7 +179,7 @@
             <label for="confirmNewMdp">Confirmer le nouveau mot de passe</label>
             <input type="password" name="confirmNewPassword" id="confirmNewMdp">
           </div>
-          <input type="submit" value="Enregistré" class="buttonSub">
+          <input type="submit" value="Enregistré" class="btn-form">
         </form>
 
       </section>
@@ -310,10 +189,9 @@
   <div class="col-2">
 
     <!-- MOYENS DE PAIEMENT -->
-    <section class="info-section">
+    <section class="info-section-2">
       <div class="top-section">
         <h3>Moyens de paiement</h3>
-        <i data-lucide="chevron-down"></i>
       </div>
 
       <ul class="onglet-paiement">
@@ -348,7 +226,6 @@
                     <span>****</span>
                     <span>****</span>
                     <span>1234</span>
-                    <i data-lucide="eye" class="iconEye"></i>
                   </div>
 
                   <div class="cb-card-bottom">
@@ -381,7 +258,6 @@
                     <span>****</span>
                     <span>****</span>
                     <span>5678</span>
-                    <i data-lucide="eye" class="iconEye"></i>
                   </div>
 
                   <div class="cb-card-bottom">
@@ -414,7 +290,6 @@
                     <span>****</span>
                     <span>****</span>
                     <span>9012</span>
-                    <i data-lucide="eye" class="iconEye"></i>
                   </div>
 
                   <div class="cb-card-bottom">
@@ -456,13 +331,13 @@
             <article class="other-payment-item">
 
               <div class="row-info">
-                <div class="title-info">
-                  <strong>Prélèvement SEPA</strong>
-                  <i data-lucide="info" class="icon-infoPage"></i>
-                </div>
+                <strong>Prélèvement SEPA</strong>
 
-                <span class="badge-soft payment-badge">Actif</span>
+                <button type="button" class="add-bank-link">
+                  + Ajouter un compte
+                </button>
               </div>
+              <p class="text">Ajoutez un compte bancaire pour gérer vos paiements automatiques et abonnements.</p>
 
               <!-- LISTE IBAN -->
               <div class="iban-list">
@@ -492,35 +367,21 @@
                 </div>
 
               </div>
-
-              <!-- AJOUT -->
-              <button type="button" class="add-bank-link">
-                + Ajouter un autre compte
-              </button>
-
-              <!-- FORMULAIRE -->
-              <form class="iban-form">
-                <input class="ibanInput" type="text" placeholder="FR76 XXXX XXXX XXXX XXXX">
-
-                <select class="ibanInput">
-                  <option>Compte secondaire</option>
-                  <option>Compte de secours</option>
-                </select>
-
-                <input type="submit" value="Ajouter">
-              </form>
-
+              <i data-lucide="ellipsis"></i>
             </article>
 
             <div class="row-info-payement">
-              <article class="other-payment-item">
-                <div>
+              <article class="other-payment-item paypal-item">
+                <div class="row-info">
                   <strong>PayPal</strong>
-                  <p style="display: none;">Aucun compte connecté</p>
-                  <p>contact@email.com</p>
+                  <a href="#" class="add-bank-link">+ Ajouter un compte</a>
                 </div>
 
-                <a href="#">Ajouter un compte</a>
+                <p>Aucun compte connecté</p>
+                <!-- <p>contact@email.com</p> -->
+
+                <i data-lucide="ellipsis"></i>
+
               </article>
 
               <article class="other-payment-item other-payment-more">
@@ -532,41 +393,5 @@
       </div>
     </section>
 
-    <!-- PRÉFÉRENCES -->
-    <section class="info-section">
-      <div class="top-section">
-        <h3>Préférences</h3>
-        <i data-lucide="chevron-down"></i>
-      </div>
-
-      <div class="content">
-        <div class="preference-container">
-          <form action="#">
-            <div class="form-groupe-pref">
-              <label for="language">Notifications</label>
-              <div class="checkbox-group">
-                <div class="group-1" style="display: flex;">
-                  <label>
-                    <input type="checkbox" name="notifications" value="email">
-                    Par email
-                  </label>
-                  <select name="notification-frequency" id="notification-frequency">
-                    <option value="daily">Quotidiennement</option>
-                    <option value="weekly">Hebdomadairement</option>
-                    <option value="monthly">Mensuellement</option>
-                  </select>
-                </div>
-
-
-                <label>
-                  <input type="checkbox" name="notifications" value="sms">
-                  Par SMS
-                </label>
-
-              </div>
-          </form>
-        </div>
-      </div>
-    </section>
   </div>
 </div>

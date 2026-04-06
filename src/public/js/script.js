@@ -15,31 +15,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
 
 
-    // Aside dashboard
+    // Variables aside
     const dashboardMain = document.querySelector(".dashboard-main");
-    const aside = document.querySelector(".aside-dashboard");
-    const toggleAsideBtn = document.querySelector(".toggle-aside");
+    const btnMenu = document.querySelector(".mobile-open-aside");
+    const closeAsideBtn = document.querySelector(".closed-aside");
 
-    const savedAsideState = localStorage.getItem("dashboard-aside-collapsed");
+    // Fonction ouverture de l'aside sur mobile et tablette
+    btnMenu?.addEventListener("click", () => {
+        dashboardMain.classList.add("mobile-aside-open");
+    });
 
-    if (savedAsideState === "true" && dashboardMain) {
-        dashboardMain.classList.add("aside-collapsed");
-    }
-
-    if (toggleAsideBtn && dashboardMain) {
-        toggleAsideBtn.addEventListener("click", () => {
-            dashboardMain.classList.toggle("aside-collapsed");
-
-            const isCollapsed = dashboardMain.classList.contains("aside-collapsed");
-            localStorage.setItem("dashboard-aside-collapsed", isCollapsed);
-
-            toggleAsideBtn.setAttribute(
-                "aria-label",
-                isCollapsed ? "Ouvrir l'aside" : "Fermer l'aside"
-            );
-        });
-    }
-
+    closeAsideBtn?.addEventListener("click", () => {
+        dashboardMain.classList.remove("mobile-aside-open");
+    });
+    // ========================================================
+    
     // Modal
     if (openBtn && modal) {
         openBtn.addEventListener("click", () => {
@@ -109,16 +99,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Toggle dark mode
     themeBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
+        btn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
 
-        const isDark = document.body.classList.contains("dark-mode");
-        localStorage.setItem("dashboard-theme", isDark ? "dark" : "light");
+            const isDark = document.body.classList.contains("dark-mode");
+            localStorage.setItem("dashboard-theme", isDark ? "dark" : "light");
 
-        // sync visuel sur tous les boutons
-        themeBtns.forEach(b => b.classList.toggle("active", isDark));
+            // sync visuel sur tous les boutons
+            themeBtns.forEach(b => b.classList.toggle("active", isDark));
+        });
     });
-});
     const mesProjet = document.querySelector(".mesProjet");
     const mesProjetHandleY = document.querySelector(".mesProjet-resize-handle-y");
 
@@ -170,48 +160,39 @@ document.addEventListener("DOMContentLoaded", () => {
         mesProjetHandleY.addEventListener("pointercancel", stopResize);
     }
     const grid = document.querySelector(".project-grid");
-const btnGrid = document.querySelector(".btn-view-grid");
-const btnList = document.querySelector(".btn-view-list");
+    const btnGrid = document.querySelector(".btn-view-grid");
+    const btnList = document.querySelector(".btn-view-list");
 
-const STORAGE_KEY_VIEW = "projectView";
+    const STORAGE_KEY_VIEW = "projectView";
 
-if (grid) {
-    const savedView = localStorage.getItem(STORAGE_KEY_VIEW);
+    if (grid) {
+        const savedView = localStorage.getItem(STORAGE_KEY_VIEW);
 
-    if (savedView === "list") {
-        grid.classList.add("view-list");
-        btnList?.classList.add("active");
-        btnGrid?.classList.remove("active");
+        if (savedView === "list") {
+            grid.classList.add("view-list");
+            btnList?.classList.add("active");
+            btnGrid?.classList.remove("active");
+        }
+
+        btnGrid?.addEventListener("click", () => {
+            grid.classList.remove("view-list");
+
+            btnGrid.classList.add("active");
+            btnList.classList.remove("active");
+
+            localStorage.setItem(STORAGE_KEY_VIEW, "grid");
+        });
+
+        btnList?.addEventListener("click", () => {
+            grid.classList.add("view-list");
+
+            btnList.classList.add("active");
+            btnGrid.classList.remove("active");
+
+            localStorage.setItem(STORAGE_KEY_VIEW, "list");
+        });
     }
 
-    btnGrid?.addEventListener("click", () => {
-        grid.classList.remove("view-list");
-
-        btnGrid.classList.add("active");
-        btnList.classList.remove("active");
-
-        localStorage.setItem(STORAGE_KEY_VIEW, "grid");
-    });
-
-    btnList?.addEventListener("click", () => {
-        grid.classList.add("view-list");
-
-        btnList.classList.add("active");
-        btnGrid.classList.remove("active");
-
-        localStorage.setItem(STORAGE_KEY_VIEW, "list");
-    });
-}
-    const btnMenu = document.querySelector(".mobile-open-aside");
-    const closeAsideBtn = document.querySelector(".closed-aside");
-
-    btnMenu?.addEventListener("click", () => {
-        dashboardMain.classList.add("mobile-aside-open");
-    });
-
-    closeAsideBtn?.addEventListener("click", () => {
-        dashboardMain.classList.remove("mobile-aside-open");
-    });
     const mobileMore = document.querySelector(".mobile-more");
     const ellipsisBtn = document.querySelector(".icon-ellipsis");
 
