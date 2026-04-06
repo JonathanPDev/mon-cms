@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".card");
 
     // Variables thème
-    const themeBtn = document.querySelector(".icon-theme");
+    const themeBtns = document.querySelectorAll(".icon-theme");
     const body = document.body;
 
 
@@ -108,21 +108,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Toggle dark mode
-    if (themeBtn) {
-        themeBtn.addEventListener("click", () => {
-            body.classList.toggle("dark-mode");
+    themeBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
 
-            const isDark = body.classList.contains("dark-mode");
-            localStorage.setItem("dashboard-theme", isDark ? "dark" : "light");
+        const isDark = document.body.classList.contains("dark-mode");
+        localStorage.setItem("dashboard-theme", isDark ? "dark" : "light");
 
-            themeBtn.classList.toggle("active", isDark);
-        });
-
-        // état visuel au chargement
-        if (body.classList.contains("dark-mode")) {
-            themeBtn.classList.add("active");
-        }
-    }
+        // sync visuel sur tous les boutons
+        themeBtns.forEach(b => b.classList.toggle("active", isDark));
+    });
+});
     const mesProjet = document.querySelector(".mesProjet");
     const mesProjetHandleY = document.querySelector(".mesProjet-resize-handle-y");
 

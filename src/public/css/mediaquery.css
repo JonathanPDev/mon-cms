@@ -99,25 +99,27 @@
     .info-box-grid {
         padding: 0;
     }
+
     .col-1 form {
         width: 100%;
         padding: 10px;
     }
+
     form .form-group {
         flex-direction: column;
     }
 
     /* Carte bancaire */
-    .cb-track  {
+    .cb-track {
         margin-left: 20px;
     }
+
     /* Prélèvements & autres */
     .other-payment-box {
         padding: 10px;
     }
 
-    /* Teste onglets info personelles */
-    .onglet {
-        
+    .col-1 .info-section {
+        max-width: 400px;
     }
 }

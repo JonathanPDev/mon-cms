@@ -116,4 +116,61 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+    const addBtn = document.querySelector(".add-bank-link");
+    const form = document.querySelector(".iban-form");
+    const list = document.querySelector(".iban-list");
+
+    // Ouvrir / fermer le formulaire
+    addBtn.addEventListener("click", () => {
+        form.classList.toggle("active");
+    });
+
+    // Ajouter un IBAN dynamiquement
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const ibanInput = form.querySelector("input[type='text']");
+        const typeSelect = form.querySelector("select");
+
+        const iban = ibanInput.value.trim();
+        const type = typeSelect.value;
+
+        if (!iban) return;
+
+        // Création du nouvel IBAN
+        const item = document.createElement("div");
+        item.className = "iban-item";
+
+        item.innerHTML = `
+      <div>
+        <span class="iban-badge">${type}</span>
+        <strong>${iban}</strong>
+      </div>
+
+      <div class="iban-actions">
+        <button class="btn-secondary-info">Modifier</button>
+        <button class="btn-secondary-info">Détails</button>
+      </div>
+    `;
+
+        list.appendChild(item);
+
+        // reset
+        ibanInput.value = "";
+        form.classList.remove("active");
+    });
+
+    // Animation formulaire test
+    const input = document.querySelectorAll('input');
+    
+    for (let i = 0; i < input.length; i++) {
+        let field = input[i];
+        field.addEventListener('input', (e) => {
+            if (e.target.value !== '') { 
+                e.target.parentNode.classList.add("animation");
+            } else if (e.target.value == '') {
+                e.target.parentNode.classList.remove("animation");
+            }
+        });
+    }
 });

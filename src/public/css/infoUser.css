@@ -1,21 +1,25 @@
 li {
     list-style: none;
 }
+
 .iban {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 10px 0;
 }
+
 /* Boutons */
 .btn-secondary-info {
     border: none;
     background: transparent;
     color: gray;
 }
+
 .btn-secondary-info:hover {
     color: var(--text-main);
 }
+
 .info-box-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -24,25 +28,33 @@ li {
 
     color: var(--text-main);
 }
+
 .col-1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
 }
-.col-1 form{
+
+.col-1 form {
     width: 500px;
     max-width: 500px;
     padding-top: 10px;
 
 }
-.col-2{
+.col-1 .info-section {
+    width: 100%;
+    max-width: 500px;
+    min-width: 0;
+}
+.col-2 {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
+
 .col-1 form input[type="submit"] {
-    float: right;
+    /* float: right; */
     border: none;
     margin-top: 10px;
     padding: 10px 16px;
@@ -50,33 +62,39 @@ li {
     background: linear-gradient(135deg, #5b6cff, #7886ff);
     color: white;
 }
+
 /* Alertes formulaire */
 .alertes {
     display: none;
     margin-top: 25px;
     color: red;
 }
+
 .form-row {
     background: red;
     /* max-width: 50px; */
     display: flex;
     gap: 10px;
 }
+
 .form-group {
     flex: 1;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
 }
+
 .form-group-adress {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
+
 input[type="date"] {
     color: var(--text-main);
 }
-.content-adress-plus{
+
+.content-adress-plus {
     display: none;
     flex-direction: column;
     gap: 16px;
@@ -88,7 +106,7 @@ input[type="date"] {
     border: none;
     border-bottom: 1px solid var(--border-color);
     color: var(--text-main);
-    
+
     padding: 12px;
     outline: none;
 }
@@ -102,8 +120,9 @@ input[type="date"] {
     justify-content: center;
     gap: 10px;
     padding: 0;
-    margin: 20px ;
+    margin: 20px;
 }
+
 .btn-onglet-paiement {
     border: 1px solid var(--border-color);
     background: var(--bg-card-secondary);
@@ -126,6 +145,7 @@ input[type="date"] {
     border-color: #6c7cff;
     color: #ffffff;
 }
+
 .container-cbCard {
     display: grid;
     grid-template-columns: 44px minmax(0, 1fr) 44px;
@@ -140,6 +160,7 @@ input[type="date"] {
     overflow: hidden;
     padding-left: 0;
 }
+
 .top-section {
     display: flex;
     align-items: center;
@@ -149,6 +170,7 @@ input[type="date"] {
     padding-bottom: 10px;
     padding-top: 18px;
 }
+
 .cb-track {
     display: flex;
     gap: 16px;
@@ -172,7 +194,7 @@ input[type="date"] {
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.16);
     background:
-        radial-gradient(circle at top right, rgba(255,255,255,0.22), transparent 30%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.22), transparent 30%),
         linear-gradient(135deg, #ff6b4a, #ff3d00 55%, #d52f00);
     box-shadow: 0 18px 35px rgba(15, 23, 42, 0.18);
     display: flex;
@@ -185,10 +207,12 @@ input[type="date"] {
     opacity: 0.72;
     transition: transform 0.25s ease, opacity 0.25s ease
 }
+
 .cb-card.is-active {
     transform: scale(1);
     opacity: 1;
 }
+
 .cb-track .add-card {
     display: flex;
     align-items: center;
@@ -196,6 +220,7 @@ input[type="date"] {
     background: var(--bg-card);
     color: var(--text-main);
 }
+
 .cb-card::before,
 .cb-card::after {
     content: "";
@@ -221,13 +246,13 @@ input[type="date"] {
 
 .cb-card-secondary {
     background:
-        radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.18), transparent 30%),
         linear-gradient(135deg, #3b82f6, #2563eb 55%, #1d4ed8);
 }
 
 .cb-card-dark {
     background:
-        radial-gradient(circle at top right, rgba(255,255,255,0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 30%),
         linear-gradient(135deg, #1f2937, #111827 55%, #030712);
 }
 
@@ -245,7 +270,7 @@ input[type="date"] {
     height: 34px;
     border-radius: 10px;
     background: linear-gradient(135deg, #f8e7a1, #c9a84d);
-    box-shadow: inset 0 1px 2px rgba(255,255,255,0.45);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.45);
     position: relative;
 }
 
@@ -414,17 +439,34 @@ input[type="date"] {
     flex-direction: column;
     gap: 18px;
 }
+.onglet-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    touch-action: pan-x;
+}
+.onglet-scroll::-webkit-scrollbar {
+    display: none;
+}
 
 .onglet {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: inline-flex;
+    flex-wrap: nowrap;
     gap: 10px;
-    padding-top: 20px;
+    padding: 20px 0 8px;
     margin: 0;
+    min-width: max-content;
+    width: 400px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 }
 
 .onglet li {
+    flex: 0 0 auto;
+    white-space: nowrap;
     border: 1px solid var(--border-color);
     background: var(--bg-card-secondary);
     color: var(--text-soft);
@@ -446,6 +488,7 @@ input[type="date"] {
     border-color: #6c7cff;
     color: #ffffff;
 }
+
 .payment-method-container {
     width: 100%;
 }
@@ -473,11 +516,13 @@ input[type="date"] {
     border-radius: 14px;
     background: var(--bg-card-secondary);
 }
-.autreMoyen{
+
+.autreMoyen {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .other-payment-item p {
     margin-top: 4px;
     color: var(--text-soft);
@@ -486,17 +531,23 @@ input[type="date"] {
 .other-payment-item small {
     color: var(--text-soft);
 }
+
 .other-payment-item a {
     margin-top: 50px;
 }
+
 @media (max-width: 700px) {
     .other-payment-item {
         flex-direction: column;
         align-items: flex-start;
     }
 }
+
 .info-container {
     width: 100%;
+}
+.info-section {
+    min-width: 0;
 }
 .form-group-adress-plus {
     display: flex;
@@ -510,7 +561,10 @@ input[type="date"] {
     margin-top: 16px;
 
 }
+
 .payment-panel {
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -524,10 +578,12 @@ input[type="date"] {
     background: var(--bg-card-secondary);
 }
 
-other-payment-more a{
+other-payment-more a {
     border: none;
 
-}.panel-title-row {
+}
+
+.panel-title-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -699,69 +755,74 @@ other-payment-more a{
     display: flex;
     justify-content: center;
 }
+
 .form-group label {
-  display: block;
-  font-size: 13px;
-  color: var(--text-soft);
-  margin-bottom: 6px;
+    display: block;
+    font-size: 13px;
+    color: var(--text-soft);
+    margin-bottom: 6px;
 }
+
 .form-group input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  background: var(--bg-card);
-  color: var(--text-main);
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-main);
 }
 
 .form-group input:focus {
-  border-color: #6c7cff;
-  box-shadow: 0 0 0 2px rgba(108,124,255,0.15);
-}
-.form-group.two-cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+    border-color: #6c7cff;
+    box-shadow: 0 0 0 2px rgba(108, 124, 255, 0.15);
 }
 
-.form-group.two-cols > div {
-  display: flex;
-  flex-direction: column;
+.form-group.two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
 }
+
+.form-group.two-cols>div {
+    display: flex;
+    flex-direction: column;
+}
+
 .field {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .field label {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 13px;
-  color: var(--text-soft);
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: var(--text-soft);
 }
 
 .field input {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: var(--bg-card);
-  color: var(--text-main);
-  box-sizing: border-box;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    box-sizing: border-box;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .form-group.two-cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
 }
+
 .row-info {
     display: inline-block;
     width: 100%;
@@ -769,25 +830,156 @@ other-payment-more a{
     justify-content: space-between;
     align-items: center;
 }
+
 .title-info {
     display: flex;
     align-items: center;
 }
+
 .row-info .icon-infoPage {
     width: 16px;
     height: 16px;
-    
+
 }
+
 .badge-soft {
     color: green;
     border: none;
 }
+
 .row-info-payement {
     display: flex;
     gap: 10px;
 }
+
 .form-groupe-pref .checkbox-group {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+.ibanInput {
+    padding: 10px 12px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    border: none;
+    border-radius: 8px;
+}
+
+.iban-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.iban-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.iban-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.iban-badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: var(--bg-main);
+    margin-right: 6px;
+}
+
+.iban-badge.primary {
+    background: #6c7cff;
+    color: white;
+}
+
+.add-bank-link {
+    background: none;
+    border: none;
+    color: #6c7cff;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.add-bank-link:hover {
+    text-decoration: underline;
+}
+
+.iban-form {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.iban-form.active {
+    display: flex;
+}
+
+/* Essai formulaire */
+.formBloc {
+    margin-top: 20px;
+}
+
+.formBloc .formGroupe {
+    position: relative;
+    display: flex;
+    margin-bottom: 25px;
+}
+.formGroupeRow .formGroupe {
+    width: 100%;
+}
+.formBloc .formGroupe label {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 16px;
+    transition: 0.4s ease-out;
+}
+
+.formBloc .formGroupe input {
+    display: block;
+    width: 100%;
+    padding: 10px 0px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 3px solid #aaa;
+    color: #666;
+    font-size: 18px;
+    transition: 0.4s ease-out;
+}
+
+.formGroupeRow {
+    display: flex;
+    gap: 12px;
+}
+
+.formBloc .formGroupe .buttonSub {
+    display: block;
+    width: auto;
+    padding: 15px 60px;
+    border: 1px solid #8b97d7;
+    border-radius: 999px;
+}
+
+/* Animation */
+.formBloc .formGroupe:focus-within label,
+.formBloc .formGroupe.animation label {
+    top: 0px;
+    transform: translateY(-100%);
+    color: #8b97d7;
+}
+
+.formBloc .formGroupe:focus-within input,
+.formBloc .formGroupe.animation input {
+    border-bottom-color: #8b97d7;
 }
