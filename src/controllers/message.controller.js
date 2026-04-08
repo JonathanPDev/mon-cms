@@ -1,11 +1,11 @@
-function message(req, res) {
+function renderMessage(req, res) {
   res.render("pages/message", {
-    title: "Message",
-    pageJs: "script.js",
+    title: "Messagerie",
+    pageJs: ["script.js", "dashboard.js", "messagerie.js"],
     showDashboardLayout: true,
     pageCss: ["dashboard.css", "mediaquery.css", "message.css"],
-    topbarTitle: "Message",
+    topbarTitle: "Messagerie",
   });
 }
 
-module.exports = { message };
+module.exports = { renderMessage };

@@ -167,7 +167,7 @@ body.dark-mode {
 .search {
     position: relative;
     flex: 1;
-    max-width: 400px;
+    max-width: 250px;
     display: flex;
     align-items: center;
     background: var(--bg-card);
@@ -682,7 +682,6 @@ body.dark-mode {
     background: linear-gradient(90deg, #4f46e5, #3b82f6);
 }
 
-p,
 .progress-line,
 .cardContent p {
     color: var(--text-soft);

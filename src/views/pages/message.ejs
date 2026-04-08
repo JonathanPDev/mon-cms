@@ -1,5 +1,346 @@
-<div class="container-message">
-    <div class="topbar-message">
-        
+<div class="message-page">
+  <!-- CHAT -->
+  <section class="message-chat card">
+    <header class="message-chat-header">
+      <div class="top-header-chat">
+        <i data-lucide="x" class="lucide-icon-closed"></i>
+        <i data-lucide="minus" class="lucide-icon-closed"></i>
+      </div>
+      <div class="info-contact-chat">
+        <div>
+          <h3>John Doe</h3>
+          <small>En ligne</small>
+        </div>
+
+        <div class="message-chat-actions">
+          <button class="icon-btn">
+            <i data-lucide="paperclip" class="icon-chat"></i>
+          </button>
+          <button class="icon-btn">
+            <i data-lucide="phone" class="icon-chat"></i>
+          </button>
+          <button class="icon-btn">
+            <i data-lucide="video" class="icon-chat"></i>
+          </button>
+        </div>
+      </div>
+
+    </header>
+
+    <div class="message-chat-body">
+      <div class="message-row received">
+        <div class="message-bubble">
+          Salut, tu peux me dire où en est le projet ?
+          <span>14:25</span>
+        </div>
+      </div>
+
+      <div class="message-row sent">
+        <div class="message-bubble">
+          Oui, j’ai presque fini la page dashboard.
+          <span>14:27</span>
+        </div>
+      </div>
+
+      <div class="message-row received">
+        <div class="message-bubble">
+          Parfait, envoie-moi une preview quand tu peux.
+          <span>14:32</span>
+        </div>
+      </div>
     </div>
+
+    <form class="message-chat-form">
+      <button type="button" class="icon-btn">+</button>
+      <input type="text" placeholder="Écrire un message...">
+      <button type="submit" class="send-btn">Envoyer</button>
+    </form>
+  </section>
+  <!-- SIDEBAR -->
+  <aside class="message-sidebar">
+
+    <div class="message-sidebar-top">
+      <ul class="message-tabs">
+        <li class="active">Discussions</li>
+        <li>Emails</li>
+      </ul>
+      <div class="outils">
+        <input type="checkbox" name="" id="">
+        <i data-lucide="refresh-cw"></i>
+        <i data-lucide="search"></i>
+      </div>
+    </div>
+<hr>
+    <div class="conversation-list">
+      <article class="conversation-item active">
+        <div class="conversation-avatar">JD</div>
+        <div class="conversation-content">
+          <div class="conversation-top">
+            <strong>John Doe</strong>
+            <span>14:32</span>
+          </div>
+          <p>Salut, j'ai validé la maquette.</p>
+        </div>
+        <span class="conversation-badge">2</span>
+      </article>
+
+      <article class="conversation-item">
+        <div class="conversation-avatar">OC</div>
+        <div class="conversation-content">
+          <div class="conversation-top">
+            <strong>Océane</strong>
+            <span>12:10</span>
+          </div>
+          <p>Tu peux revoir le formulaire ?</p>
+        </div>
+      </article>
+
+      <article class="conversation-item">
+        <div class="conversation-avatar group-avatar">GT</div>
+        <div class="conversation-content">
+          <div class="conversation-top">
+            <strong>Groupe projet site</strong>
+            <span>Hier</span>
+          </div>
+          <p>3 nouveaux messages</p>
+        </div>
+      </article>
+      <article class="conversation-item active">
+        <div class="conversation-avatar">JD</div>
+        <div class="conversation-content">
+          <div class="conversation-top">
+            <strong>John Doe</strong>
+            <span>14:32</span>
+          </div>
+          <p>Salut, j'ai validé la maquette.</p>
+        </div>
+        <span class="conversation-badge">2</span>
+      </article>
+
+      <article class="conversation-item">
+        <div class="conversation-avatar">OC</div>
+        <div class="conversation-content">
+          <div class="conversation-top">
+            <strong>Océane</strong>
+            <span>12:10</span>
+          </div>
+          <p>Tu peux revoir le formulaire ?</p>
+        </div>
+      </article>
+
+      <article class="conversation-item">
+        <div class="conversation-avatar group-avatar">GT</div>
+        <div class="conversation-content">
+          <div class="conversation-top">
+            <strong>Groupe projet site</strong>
+            <span>Hier</span>
+          </div>
+          <p>3 nouveaux messages</p>
+        </div>
+      </article>
+    </div>
+  </aside>
+
+  <!-- Contact -->
+  <aside class="message-details is-collapsed">
+    <div class="rezize-bar-contact"></div>
+    <div class="top-aside">
+      <h3>Contact</h3>
+
+      <div class="search">
+        <input type="search" name="" id="" placeholder="Rechercher un contact">
+        <i data-lucide="search"></i>
+      </div>
+    </div>
+    <hr>
+
+    <div class="topbar-onglets">
+      <li class="btn-onglet-contact active" data-contact-tab="toutContact-section">Tous les contacts</li>
+      <li class="btn-onglet-contact" data-contact-tab="colab-section">Colaborateurs</li>
+      <li class="btn-onglet-contact" data-contact-tab="client-section">Client</li>
+      <li class="btn-onglet-contact" data-contact-tab="serviceTech-section">Service technique</li>
+    </div>
+    <div class="contact-method-panel toutContact-section active">
+      <article class="contactItem">
+        <div class="infoUser">
+          <div class="avatarUser">C</div>
+          <div class="contentInfo">
+            <a href="#">Colaborateur</a>
+            <span>Actif il y a 6h</span>
+          </div>
+        </div>
+
+        <div class="barAction">
+          <i data-lucide="mail"></i>
+          <i data-lucide="message-circle"></i>
+          <i data-lucide="ellipsis-vertical"></i>
+        </div>
+      </article>
+      <article class="contactItem">
+        <div class="infoUser">
+          <div class="avatarUser">C</div>
+          <div class="contentInfo">
+            <a href="#">Client</a>
+            <span>Actif il y a 3j</span>
+          </div>
+        </div>
+        <div class="barAction">
+          <i data-lucide="mail"></i>
+          <i data-lucide="message-circle"></i>
+          <i data-lucide="ellipsis-vertical"></i>
+        </div>
+      </article>
+      <article class="contactItem">
+        <div class="infoUser">
+          <div class="avatarUser">Live</div>
+          <div class="contentInfo">
+            <a href="#">Support live</a>
+            <span>de 8h à 19h</span>
+          </div>
+        </div>
+        <div class="barAction">
+          <i data-lucide="mail"></i>
+          <i data-lucide="message-circle"></i>
+          <i data-lucide="ellipsis-vertical"></i>
+        </div>
+      </article>
+      <article class="contactItem">
+        <div class="infoUser">
+          <div class="avatarUser">C</div>
+          <div class="contentInfo">
+            <a href="#">Colaborateur</a>
+            <span>Actif il y a 16h</span>
+          </div>
+        </div>
+        <div class="barAction">
+          <i data-lucide="mail"></i>
+          <i data-lucide="message-circle"></i>
+          <i data-lucide="ellipsis-vertical"></i>
+        </div>
+
+      </article>
+      <article class="contactItem">
+        <div class="infoUser">
+          <div class="avatarUser">C</div>
+          <div class="contentInfo">
+            <a href="#">Client</a>
+            <span>Actif il y a 11h</span>
+          </div>
+        </div>
+        <div class="barAction">
+          <i data-lucide="mail"></i>
+          <i data-lucide="message-circle"></i>
+          <i data-lucide="ellipsis-vertical"></i>
+        </div>
+      </article>
+    </div>
+
+    <div class="contact-method-panel colab-section">
+      <article class="contactItem">
+        <div class="infoUser">
+          <p>
+
+          </p><a href="#">Colaborateur 1</a> - Actif il y a 6h</p>
+        </div>
+        <div class="barAction">
+          <i data-lucide="mail"></i>
+          <i data-lucide="message-circle"></i>
+          <i data-lucide="ellipsis-vertical"></i>
+        </div>
+
+      </article>
+      <article class="contactItem">
+        <h4>Colaborateur 2</h4>
+      </article>
+      <article class="contactItem">
+        <h4>Colaborateur 3</h4>
+      </article>
+
+    </div>
+    <div class="contact-method-panel client-section">
+      <!-- Client -->
+      <article class="contactItem">
+        <div class="infoUser">
+          <div class="avatarUser">C</div>
+          <p><a href="#">Colaborateur</a> - <span>Actif il y a 6h</span></p>
+        </div>
+        <div class="barAction">
+          <i data-lucide="mail" class="icon-barAction"></i>
+          <i data-lucide="message-circle" class="icon-barAction"></i>
+          <i data-lucide="ellipsis-vertical" class="icon-barAction"></i>
+        </div>
+
+      </article>
+      <article class="contactItem">
+        <div class="infoUser">
+          <div class="avatarUser">CL</div>
+          <p><a href="#">client</a> - <span>Actif il y a 3j</span></p>
+        </div>
+        <div class="barAction">
+          <i data-lucide="mail" class="icon-barAction"></i>
+          <i data-lucide="message-circle" class="icon-barAction"></i>
+          <i data-lucide="ellipsis-vertical" class="icon-barAction"></i>
+        </div>
+      </article>
+      <article class="contactItem">
+        <div class="infoUser">
+          <div class="avatarUser">Live</div>
+          <p><a href="#">Support live</a> - <span>de 8h à 19h</span></p>
+        </div>
+        <div class="barAction">
+          <i data-lucide="mail" class="icon-barAction"></i>
+          <i data-lucide="message-circle" class="icon-barAction"></i>
+          <i data-lucide="ellipsis-vertical" class="icon-barAction"></i>
+        </div>
+      </article>
+
+      <!-- Service technique -->
+      <article class="contactItem">
+        <div class="infoUser">
+          <div class="avatarUser">C</div>
+          <p><a href="#">Colaborateur</a> - <span>Actif il y a 6h</span></p>
+        </div>
+        <div class="barAction">
+          <i data-lucide="mail"></i>
+          <i data-lucide="message-circle"></i>
+          <i data-lucide="ellipsis-vertical"></i>
+        </div>
+
+      </article>
+      <article class="contactItem">
+        <div class="infoUser">
+          <div class="avatarUser">CL</div>
+          <p><a href="#">client</a> - <span>Actif il y a 3j</span></p>
+        </div>
+        <div class="barAction">
+          <i data-lucide="mail"></i>
+          <i data-lucide="message-circle"></i>
+          <i data-lucide="ellipsis-vertical"></i>
+        </div>
+      </article>
+      <article class="contactItem">
+        <div class="infoUser">
+          <div class="avatarUser">Live</div>
+          <p><a href="#">Support live</a> - <span>de 8h à 19h</span></p>
+        </div>
+        <div class="barAction">
+          <i data-lucide="mail"></i>
+          <i data-lucide="message-circle"></i>
+          <i data-lucide="ellipsis-vertical"></i>
+        </div>
+      </article>
+
+    </div>
+    <div class="contact-method-panel serviceTech-section">
+      <article>
+        <h4>Conseiler 1</h4>
+      </article>
+      <article>
+        <h4>Support 2</h4>
+      </article>
+      <article>
+        <h4>Conseiller 3</h4>
+      </article>
+    </div>
+  </aside>
 </div>

@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+    
     const addBtn = document.querySelector(".add-bank-link");
     const form = document.querySelector(".iban-form");
     const list = document.querySelector(".iban-list");

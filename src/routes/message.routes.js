@@ -3,6 +3,6 @@ const router = express.Router();
 const messageController = require("../controllers/message.controller");
 const { requireAuth } = require("../middlewares/auth.middleware");
 
-router.get("/message", requireAuth, messageController.message);
+router.get("/message", requireAuth, messageController.renderMessage);
 
 module.exports = router;
