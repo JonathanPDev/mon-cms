@@ -3,8 +3,8 @@ function renderMessage(req, res) {
     title: "Messagerie",
     pageJs: ["script.js", "dashboard.js", "messagerie.js"],
     showDashboardLayout: true,
-    pageCss: ["dashboard.css", "mediaquery.css", "message.css"],
-    topbarTitle: "Messagerie",
+    pageCss: ["global.css", "newDashboard.css" , "mediaquery.css", "message.css"],
+    topbarTitle: "Message",
   });
 }
 

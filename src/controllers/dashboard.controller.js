@@ -11,7 +11,7 @@ async function dashboard(req, res) {
     res.render("pages/dashboard", {
       layout: "layouts/site",
       title: "Dashboard",
-      pageCss: ["dashboard.css", "mediaquery.css"],
+      pageCss: ["global.css" , "newDashboard.css", "mediaquery.css"],
       pageJs: "script.js",
       showDashboardLayout: true,
       topbarTitle: "Dashboard",

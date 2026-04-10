@@ -4,7 +4,7 @@ const User = require("../models/User");
 function renderAuth(res, options = {}) {
   return res.render("pages/auth", {
     title: "Connexion / Inscription",
-    pageCss: "auth.css",
+    pageCss: ["global.css", "auth.css"],
     pageJs: "auth.js",
     loginError: null,
     registerError: null,
